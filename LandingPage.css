@@ -1,0 +1,133 @@
+body {
+  background-color: #101113;
+  color: #fff;
+}
+* {
+  font-family: "Open Sans", sans-serif;
+  font-family: "Poppins", sans-serif;
+  font-family: "Roboto Mono", monospace;
+  font-family: "Syne", sans-serif;
+}
+.navigation {
+  /* border: 2px solid red; */
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.myname-dot {
+  /* border: 1px solid green; */
+}
+.myname-dot h2 {
+  /* border: 1px solid red; */
+  font-weight: 900;
+}
+.dot {
+  color: #a6a001;
+}
+.nav-list {
+  /* border: 1px solid greenyellow; */
+  width: 30%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  justify-content: space-between;
+}
+.subscribe {
+  /* border: 1px solid yellow; */
+  border-radius: 10px;
+  height: 35px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+.section1 {
+  /* border: 2px solid blue; */
+  margin-top: 4%;
+  display: flex;
+  justify-content: space-evenly;
+}
+.me-description {
+  /* border: 1px solid red; */
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.hey-header {
+  /* border: 1px solid yellow; */
+  display: flex;
+  justify-content: flex-start;
+  font-size: 11px;
+}
+.my-names {
+  /* border: 1px solid green; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 25px;
+}
+.my-names h1 {
+  /* border: 1px solid red; */
+}
+.my-names h2 {
+  margin-top: 0;
+  /* border: 1px solid yellow; */
+}
+.am-soft {
+  /* border: 1px solid purple; */
+  display: flex;
+  justify-content: center;
+  font-size: 20px;
+}
+.small-descr {
+  /* border: 1px solid cyan; */
+  font-size: 10px;
+}
+.cv button {
+  border: 1px solid #a6a001;
+  border-radius: 3px;
+  height: 30px;
+  width: 60px;
+  background-color: #101113;
+  color: #fff;
+  cursor: pointer;
+}
+.my-img-roles {
+  /* border: 1px solid green; */
+  width: 40%;
+}
+.me {
+  /* border: 1px solid red; */
+  position: absolute;
+  top: -9%;
+  right: 13%;
+}
+.web {
+  border-radius: 3px;
+  border: 0;
+  position: relative;
+  width: 90px;
+  height: 43px;
+  background-color: #acacac;
+}
+.mobile {
+  border-radius: 3px;
+  border: 0;
+  position: relative;
+  top: 30%;
+  left: 47%;
+  height: 35px;
+  background-color: #4b4b4b;
+  color: #fff;
+}
+.ui {
+  border-radius: 4px;
+  border: 0;
+  position: relative;
+  top: 55%;
+  right: 39%;
+  height: 35px;
+  background-color: #000;
+  color: #fff;
+}

@@ -1,0 +1,73 @@
+* {
+  font-family: "Open Sans", sans-serif;
+  font-family: "Poppins", sans-serif;
+  font-family: "Roboto Mono", monospace;
+  font-family: "Syne", sans-serif;
+}
+body {
+  display: flex;
+  gap: 5%;
+  background-color: #000;
+}
+.sidebar {
+  background-color: #2c2d2d;
+  color: #fff;
+  width: 20%;
+  height: 98vh;
+  margin-left: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+a {
+  text-decoration: none;
+  color: #fff;
+}
+.notification {
+  /* border: 1px solid red; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2em;
+  width: 100%;
+}
+h4 {
+  color: #a6a001;
+}
+p {
+  color: #fff;
+}
+.msg-card {
+  /* border: 1px solid rgb(255, 255, 255); */
+  width: 70%;
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #4b4b4b;
+}
+.text {
+  /* border: 1px solid yellow; */
+  /* display: block;
+  justify-content: flex-start;
+  align-items: center; */
+}
+.eye {
+  /* border: 1px solid orange; */
+}
+.msgs {
+  /* border: 1px solid red; */
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1em;
+}
+.noti-feed {
+  /* border: 1px solid red; */
+  display: flex;
+  justify-content: space-between;
+  width: 50%;
+}

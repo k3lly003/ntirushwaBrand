@@ -19,11 +19,30 @@ body {
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
+  position: fixed;
+}
+.logo-cont {
+  /* border: 1px solid lime; */
+  display: flex;
+  /* flex-direction: column; */
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+}
+.logo {
+  /* border: 1px solid green; */
+  height: 30px;
+  width: 30px;
 }
 .blog-heading {
   /* border: 1px solid yellow; */
+  position: relative;
+  left: 25%;
+  width: 80%;
   display: flex;
   justify-content: center;
+  align-items: center;
+  color: #fff;
 }
 .blog-heading h2 {
   font-size: 1.5em;
@@ -34,9 +53,12 @@ a {
 }
 .blog-view {
   /* border: 1px solid blue; */
+  position: relative;
+  left: 25%;
   display: flex;
   gap: 2em;
-  /* flex-wrap: wrap; */
+  margin-bottom: 2em;
+  width: 80%;
 }
 p,
 h3 {

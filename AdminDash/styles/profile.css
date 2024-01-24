@@ -20,6 +20,19 @@ body {
   justify-content: space-between;
   align-items: center;
 }
+.logo-cont {
+  /* border: 1px solid lime; */
+  display: flex;
+  /* flex-direction: column; */
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+}
+.logo {
+  /* border: 1px solid green; */
+  height: 30px;
+  width: 30px;
+}
 a {
   text-decoration: none;
   color: #fff;

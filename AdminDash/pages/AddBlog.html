@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Theme</title>
+    <title>Profile</title>
   </head>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -23,10 +23,10 @@
     crossorigin="anonymous"
     referrerpolicy="no-referrer"
   />
-  <link rel="stylesheet" href="../styles/themes.css" />
+  <link rel="stylesheet" href="../styles/AddBlog.css" />
   <body>
     <div class="sidebar">
-      <a href="../dash.html">
+      <a href="./dash.html">
         <div class="logo-cont">
           <h2>Dashboard</h2>
           <img src="/assets/dashboard.png" alt="" class="logo" />
@@ -61,29 +61,22 @@
         <button>Logout</button>
       </div>
     </div>
-    <div class="theme">
-      <div>
-        <h1>Modify Your Theme Here</h1>
+    <div class="profile">
+      <div class="upper-profile">
+        <h1>Blog</h1>
       </div>
       <div class="lower-profile">
-        <div class="view">
-          <h3>Change color</h3>
-          <i class="fa fa-chevron-down" aria-hidden="true"></i>
+        <div>
+          <h3>Add Date</h3>
+          <input type="text" />
         </div>
-        <div class="p-toggle">
-          <div>
-            <h3>turn to dark mode</h3>
-          </div>
-          <div>
-            <label class="switch">
-              <input type="checkbox" checked />
-              <span class="slider round"></span>
-            </label>
-          </div>
+        <div>
+          <h3>Add Title</h3>
+          <input type="text" />
         </div>
-        <div class="view">
-          <h3>Change Fonts</h3>
-          <i class="fa fa-chevron-down" aria-hidden="true"></i>
+        <div>
+          <h3>Add Message</h3>
+          <input type="text" />
         </div>
       </div>
       <div class="bellow-button">

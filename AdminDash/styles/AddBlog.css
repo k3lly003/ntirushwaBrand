@@ -7,7 +7,7 @@
 body {
   display: flex;
   gap: 5%;
-  background-color: #000;
+  background-color: rgb(231, 231, 231);
 }
 .sidebar {
   background-color: #2c2d2d;
@@ -32,56 +32,74 @@ body {
   /* border: 1px solid green; */
   height: 30px;
   width: 30px;
-  display: none;
 }
-a {
+.sidebar a {
   text-decoration: none;
   color: #fff;
 }
-.notification {
+.dash {
   /* border: 1px solid red; */
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 2em;
+  justify-content: space-evenly;
   width: 100%;
 }
-h4 {
-  color: #a6a001;
-}
-p {
-  color: #fff;
-}
-.msg-card {
-  /* border: 1px solid rgb(255, 255, 255); */
-  width: 70%;
-  border-radius: 5px;
+.head {
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
-  background-color: #4b4b4b;
 }
-.text {
-  /* border: 1px solid yellow; */
-  /* display: block;
-  justify-content: flex-start;
-  align-items: center; */
-}
-.eye {
-  /* border: 1px solid orange; */
-}
-.msgs {
+.nav-card {
   /* border: 1px solid red; */
+  display: flex;
+  gap: 5em;
+  height: 30%;
   width: 90%;
+  padding: 0;
+}
+.nav-card a {
+  display: flex;
+  text-decoration: none;
+  color: #2c2d2d;
+  font-size: 1em;
+  font-weight: 900;
+}
+.card {
+  /* border: 1px solid red; */
+  background-color: #ffffff;
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
-  gap: 1em;
+  justify-content: space-evenly;
+  border-radius: 5px;
+  width: 25%;
+  height: 100%;
 }
-.noti-feed {
-  /* border: 1px solid red; */
+.card-icon {
+  /* border: 1px solid rgb(221, 13, 65); */
+}
+#icon {
+  /* border: 1px solid orange; */
+  font-size: 50px;
+}
+.bellow-card {
+  /* border: 1px solid yellow; */
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
+  align-items: center;
+  gap: 35px;
+}
+/* 
+   */
+/* 
+    */
+.card-three {
+  /* border: 1px solid rgb(43, 0, 255); */
+  background-color: #a68e13;
+  border-radius: 15px;
   width: 50%;
+  height: 60%;
 }

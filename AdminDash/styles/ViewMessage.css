@@ -47,35 +47,16 @@ a {
   justify-content: center;
   align-items: center;
 }
-.upper-profile {
-  background-color: #e9e9e965;
-  width: 50%;
-  height: 30%;
-  display: flex;
-  justify-content: space-between;
+.profile h3 {
+  color: rgb(149, 149, 3);
 }
-.profile-img {
-  /* border: 1px solid green; */
-  width: 30%;
-  border-radius: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.profile-img img {
-  /* border: 1px solid red; */
-  height: 100px;
-  width: 100px;
-  border-radius: 100%;
-  background-color: #90aaff;
-}
-.lower-profile {
+.upper-div {
   /* border: 1px solid yellow; */
   width: 50%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
 }
-.lower-profile div {
-  border-top: 1px solid white;
+.lower-div {
+  /* border: 1px solid white; */
+  width: 50%;
+  display: flex;
+  gap: 10px;
 }

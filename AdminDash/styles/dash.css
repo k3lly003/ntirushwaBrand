@@ -7,6 +7,7 @@
 body {
   display: flex;
   gap: 5%;
+  background-color: rgb(231, 231, 231);
 }
 .sidebar {
   background-color: #2c2d2d;
@@ -31,6 +32,7 @@ body {
   /* border: 1px solid green; */
   height: 30px;
   width: 30px;
+  display: none;
 }
 .sidebar a {
   text-decoration: none;
@@ -40,8 +42,9 @@ body {
   /* border: 1px solid red; */
   display: flex;
   flex-direction: column;
-  /* justify-content: center; */
-  /* align-items: center; */
+  justify-content: center;
+  align-items: center;
+  justify-content: space-evenly;
   width: 100%;
 }
 .head {
@@ -65,26 +68,35 @@ body {
   font-weight: 900;
 }
 .card {
-  border: 1px solid cyan;
-  background-color: #4b4949;
-  border-radius: 15px;
-  width: 50%;
-  height: 60%;
-}
-.card-one {
-  border: 1px solid rgb(0, 0, 0);
-  background-color: #abaaaa;
-  border-radius: 15px;
-  width: 30%;
-  height: 60%;
-}
-.card-two {
-  /* border: 1px solid rgb(8, 216, 88); */
-  background-color: rgb(8, 216, 88);
-  border-radius: 15px;
+  /* border: 1px solid red; */
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  justify-content: space-evenly;
+  border-radius: 5px;
   width: 25%;
-  height: 60%;
+  height: 100%;
 }
+.card-icon {
+  /* border: 1px solid rgb(221, 13, 65); */
+}
+#icon {
+  /* border: 1px solid orange; */
+  font-size: 50px;
+}
+.bellow-card {
+  /* border: 1px solid yellow; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 35px;
+}
+/* 
+ */
+/* 
+  */
 .card-three {
   /* border: 1px solid rgb(43, 0, 255); */
   background-color: #a68e13;

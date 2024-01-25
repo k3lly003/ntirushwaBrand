@@ -21,20 +21,6 @@ body {
   justify-content: space-between;
   align-items: center;
 }
-.logo-cont {
-  /* border: 1px solid lime; */
-  display: flex;
-  /* flex-direction: column; */
-  justify-content: center;
-  align-items: center;
-  gap: 5px;
-}
-.logo {
-  /* border: 1px solid green; */
-  height: 30px;
-  width: 30px;
-  display: none;
-}
 a {
   text-decoration: none;
   color: #fff;
@@ -46,13 +32,16 @@ a {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  justify-content: space-evenly;
 }
 .upper-profile {
   background-color: #e9e9e965;
-  width: 50%;
-  height: 30%;
+  border-radius: 5px;
+  width: 30%;
+  height: 15%;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
+  align-items: center;
 }
 .profile-img {
   /* border: 1px solid green; */
@@ -62,13 +51,6 @@ a {
   justify-content: center;
   align-items: center;
 }
-.profile-img img {
-  /* border: 1px solid red; */
-  height: 100px;
-  width: 100px;
-  border-radius: 100%;
-  background-color: #90aaff;
-}
 .lower-profile {
   /* border: 1px solid yellow; */
   width: 50%;
@@ -76,6 +58,21 @@ a {
   flex-direction: column;
   justify-content: space-between;
 }
-.lower-profile div {
-  border-top: 1px solid white;
+.lower-profile input {
+  width: 100%;
+  padding-bottom: 10px;
+}
+.bellow-button {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.bellow-button button {
+  border-radius: 5px;
+  border: 0;
+  width: 50%;
+  padding: 5px 0px;
+  background-color: #6de462aa;
+  cursor: pointer;
 }

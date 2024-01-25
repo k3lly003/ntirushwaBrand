@@ -1,4 +1,4 @@
-* {
+nn* {
   font-family: "Open Sans", sans-serif;
   font-family: "Poppins", sans-serif;
   font-family: "Roboto Mono", monospace;
@@ -33,6 +33,7 @@ body {
   /* border: 1px solid green; */
   height: 30px;
   width: 30px;
+  display: none;
 }
 .blog-heading {
   /* border: 1px solid yellow; */
@@ -42,10 +43,17 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  justify-content: space-between;
   color: #fff;
 }
 .blog-heading h2 {
-  font-size: 1.5em;
+  font-size: 3em;
+}
+.add-blog {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
 }
 a {
   text-decoration: none;

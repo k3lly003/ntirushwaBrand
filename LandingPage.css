@@ -873,6 +873,9 @@ a {
     position: relative;
     display: inline-block;
   }
+  .dropdown i {
+    font-size: 2em;
+  }
   .dropdown-content {
     display: none;
     position: absolute;

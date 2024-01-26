@@ -61,6 +61,17 @@
         <button>Logout</button>
       </div>
     </div>
+    <div class="dropdown">
+      <i class="fa fa-bars" aria-hidden="true" class="dropbtn"></i>
+      <div class="dropdown-content">
+        <a href="./dash.html"><p>Dashboard</p></a>
+        <a href="./pages/notifications.html"><p>Notification</p></a>
+        <a href="./pages/profile.html"><p>Profile</p></a>
+        <a href="./pages/blogs.html"><p>Blogs</p></a>
+        <a href="./pages/themes.html"><p>Theme</p></a>
+        <a href=""><button>Theme</button></a>
+      </div>
+    </div>
     <div class="dash">
       <div class="head">
         <h1>Welcome to the Dashboard !!</h1>
@@ -70,7 +81,7 @@
           <div class="card-icon">
             <i class="fa fa-cogs" aria-hidden="true" id="icon"></i>
           </div>
-          <div>
+          <div class="h3">
             <h3>Manage Blog</h3>
           </div>
           <a href="./pages/blogs.html">
@@ -84,7 +95,7 @@
           <div class="card-icon">
             <i class="fa fa-sliders" aria-hidden="true" id="icon"></i>
           </div>
-          <div>
+          <div class="h3">
             <h3>Manage Profile</h3>
           </div>
           <a href="./pages/profile.html">
@@ -98,7 +109,7 @@
           <div class="card-icon">
             <i class="fa fa-paint-brush" aria-hidden="true" id="icon"></i>
           </div>
-          <div>
+          <div class="h3">
             <h3>Customize Theme</h3>
           </div>
           <a href="./pages/themes.html">
@@ -109,50 +120,114 @@
           </a>
         </div>
       </div>
-      <div class="nav-card">
-        <div class="card">
-          <div class="card-icon">
-            <i class="fa fa-bar-chart" aria-hidden="true" id="icon"></i>
-          </div>
-          <div>
-            <h3>New Visitors</h3>
-          </div>
-          <a href="./pages/notifications.html">
-            <div class="bellow-card">
-              <p>View</p>
-              <i class="fa fa-angle-right" aria-hidden="true"></i>
-            </div>
-          </a>
-        </div>
-        <div class="card">
-          <div class="card-icon">
-            <i class="fa fa-users" aria-hidden="true" id="icon"></i>
-          </div>
-          <div>
-            <h3>Users</h3>
-          </div>
-          <a href="./pages/notifications.html">
-            <div class="bellow-card">
-              <p>View</p>
-              <i class="fa fa-angle-right" aria-hidden="true"></i>
-            </div>
-          </a>
-        </div>
-        <div class="card">
-          <div class="card-icon">
-            <i class="fa fa-window-restore" aria-hidden="true" id="icon"></i>
-          </div>
-          <div>
-            <h3>Modify</h3>
-          </div>
-          <a href="./pages/notifications.html">
-            <div class="bellow-card">
-              <p>View</p>
-              <i class="fa fa-angle-right" aria-hidden="true"></i>
-            </div>
-          </a>
-        </div>
+      <div class="charts-cont-one">
+        <canvas id="myChart" style="width: 90%; max-width: 60%"></canvas>
+      </div>
+      <div class="chart-cont-two">
+        <canvas id="barChart" style="width: 100%; max-width: 100%"></canvas>
+      </div>
       </div>
     </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+    <script>
+      const ctx = document.getElementById("myChart").getContext("2d");
+      const xValues = [
+        "Jan",
+        "Feb",
+        "Marc",
+        "Apr",
+        "May",
+        "Jun",
+        "Jul",
+        "Aug",
+        "Sept",
+        "Oct",
+        "Nov",
+        "Dec",
+      ];
+      const yValues = [1, 10, 20, 16, 39, 32, 3, 40, 30, 47, 20, 49];
+      const barColors = [
+        "red",
+        "brown",
+        "greenyellow",
+        "chocolate",
+        "gold",
+        "green",
+        "pink",
+        "gold",
+        "green",
+        "orange",
+        "greenyellow",
+        "orange",
+      ];
+
+      const myChart = new Chart(ctx, {
+        type: "bar",
+        data: {
+          labels: xValues,
+          datasets: [
+            {
+              backgroundColor: barColors,
+              data: yValues,
+            },
+          ],
+        },
+        options: {
+          title: {
+                display: true,
+                text: "2023 User's stats",
+        },
+      }});
+    </script>
+        <script>
+          const aValues = [
+            "Jan",
+            "Feb",
+            "Marc",
+            "Apr",
+            "May",
+            "Jun",
+            "Jul",
+            "Aug",
+            "Sept",
+            "Oct",
+            "Nov",
+            "Dec",
+          ];
+          const bValues = [1, 10, 20, 16, 39, 32, 3, 40, 30, 47, 20, 49];
+          const BarColors = [
+            "red",
+            "brown",
+            "greenyellow",
+            "chocolate",
+            "gold",
+            "green",
+            "pink",
+            "gold",
+            "green",
+            "orange",
+            "greenyellow",
+            "orange",
+          ];
+    
+          new Chart("barChart", {
+            type: "pie",
+            data: {
+              labels: aValues,
+              datasets: [
+                {
+                  backgroundColor: BarColors,
+                  data: bValues,
+                },
+              ],
+            },
+            options: {
+              title: {
+                display: true,
+                text: "2023 User's Bar Graph",
+              },
+            },
+          });
+        </script>
   </body>
 </html>

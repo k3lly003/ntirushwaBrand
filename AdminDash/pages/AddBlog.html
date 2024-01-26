@@ -61,26 +61,39 @@
         <button>Logout</button>
       </div>
     </div>
-    <div class="profile">
-      <div class="upper-profile">
-        <h1>Blog</h1>
+    <div class="dropdown">
+      <i class="fa fa-bars" aria-hidden="true" class="dropbtn"></i>
+      <div class="dropdown-content">
+        <a href="../dash.html"><p>Dashboard</p></a>
+        <a href="./notifications.html"><p>Notification</p></a>
+        <a href="./profile.html"><p>Profile</p></a>
+        <a href="./blogs.html"><p>Blogs</p></a>
+        <a href="./themes.html"><p>Theme</p></a>
+        <a href=""><button>Theme</button></a>
       </div>
-      <div class="lower-profile">
+    </div>
+    <div class="profile">
+      <div class="upper-blog">
+        <h1>Create Blog</h1>
+      </div>
+      <div class="lower-blog">
         <div>
           <h3>Add Date</h3>
-          <input type="text" />
+          <input type="date" class="nomo" />
         </div>
         <div>
           <h3>Add Title</h3>
-          <input type="text" />
+          <input type="text" class="nomo" placeholder="title" />
         </div>
         <div>
           <h3>Add Message</h3>
-          <input type="text" />
+          <input type="text" class="numo" placeholder="message" />
         </div>
       </div>
       <div class="bellow-button">
-        <button>Save Changes</button>
+        <button>
+          <a href="./AddBlog.html">Confirm</a>
+        </button>
       </div>
     </div>
   </body>

@@ -10,6 +10,12 @@ body {
   gap: 5%;
   background-color: #000;
 }
+.dropdown {
+  display: none;
+}
+.dropdown-content {
+  display: none;
+}
 .sidebar {
   background-color: #2c2d2d;
   color: #fff;
@@ -59,4 +65,34 @@ a {
   width: 50%;
   display: flex;
   gap: 10px;
+}
+@media only screen and (max-width: 680px) {
+  .sidebar {
+    display: none;
+  }
+  .profile {
+    /* border: 1px solid orange; */
+    margin-top: 20%;
+  }
+  .dropdown i {
+    font-size: 2em;
+  }
+  .dropdown {
+    border: 1px solid red;
+    position: relative;
+    display: inline-block;
+    width: 10%;
+  }
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f95c;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    padding: 12px 16px;
+    z-index: 1;
+  }
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
 }

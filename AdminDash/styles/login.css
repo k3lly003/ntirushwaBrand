@@ -68,10 +68,16 @@ label {
   flex-direction: column;
   gap: 2%;
 }
+.button {
+  /* border: 1px solid blue; */
+  width: 100%;
+  z-index: 1;
+}
 .log-buto {
+  /* border: 1px solid green; */
   background-color: #4b4b4b;
   width: 100%;
-  padding: 10px;
+  padding: 9px;
   border-radius: 5px;
   color: #a6a001;
   font-size: 0.9em;

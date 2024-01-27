@@ -1,35 +1,19 @@
-/* slide animation */
 section {
   opacity: 0;
   transition: opacity 2s;
 }
-
-section :nth-child(1) {
+section:nth-child(1) {
   transition-delay: 100ms;
 }
-
-section :nth-child(2) {
+section:nth-child(2) {
   transition-delay: 200ms;
 }
-
-section :nth-child(3) {
-  transition-delay: 300ms;
-}
-
-section :nth-child(4) {
-  transition-delay: 400ms;
-}
-
-section :nth-child(5) {
-  transition-delay: 500ms;
-}
-
 .show {
   opacity: 1;
-  /* filter: blur(0);
-  transform: translateY(50%); */
+  filter: blur(0);
+  transform: translateY(0);
 }
-/* start css */
+
 body {
   background-color: #101113;
   color: #fff;
@@ -54,10 +38,6 @@ i {
   text-decoration: none;
   z-index: 2;
 }
-/*  */
-/*  */
-/*  */
-/*  */
 .dropdown {
   display: none;
 }
@@ -220,13 +200,6 @@ a {
   flex-direction: column;
   justify-content: space-between;
 }
-.who-am {
-  /* border: 1px solid yellow; */
-  font-size: 1.5em;
-  position: relative;
-  left: 1.5em;
-  top: -1.5em;
-}
 .wo-ski-ico {
   /* border: 1px solid yellow; */
   width: 70%;
@@ -240,22 +213,29 @@ a {
 .inputs-skills h3 {
   /* border: 1px solid rgb(255, 255, 255); */
   color: #a6a001;
-  margin: 2em 0 2em 0;
-  font-size: 2em;
+  /* margin: 2em 0 2em 0; */
+  font-size: 1.5em;
   display: flex-start;
   justify-content: center;
 }
-.nomo {
+.mama {
   /* border: 1px solid green; */
-  height: 40px;
-  width: 40px;
-  background-color: #f1f1f1;
 }
-.unimo {
-  /* border: 1px solid green; */
-  height: 40px;
-  width: 90px;
-  background-color: #f1f1f1;
+.skills-hidden {
+  /* border: 1px solid red; */
+  display: flex;
+  flex-direction: column;
+}
+.basics {
+  /* border: 1px solid yellow; */
+  display: flex;
+  justify-content: space-evenly;
+}
+.lang {
+  /* border: 1px solid purple; */
+  padding: 5px;
+  border-radius: 5px;
+  background-color: #2a2a2a;
 }
 .icon-li {
   /* border: 1px solid red; */
@@ -794,13 +774,6 @@ a {
     /* border: 1px solid red; */
     margin-top: 5em;
     height: 400px;
-  }
-}
-@media only screen and (max-width: 984px) {
-  .who-am {
-    /* border: 1px solid red; */
-    font-size: 0.8em;
-    left: 4em;
   }
 }
 @media only screen and (max-width: 960px) {

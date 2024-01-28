@@ -68,13 +68,12 @@ label {
   flex-direction: column;
   gap: 2%;
 }
-.button {
-  /* border: 1px solid blue; */
-  width: 100%;
-  z-index: 1;
-}
 .log-buto {
   /* border: 1px solid green; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1em;
   background-color: #4b4b4b;
   width: 100%;
   padding: 9px;
@@ -82,6 +81,7 @@ label {
   color: #a6a001;
   font-size: 0.9em;
 }
+
 .forget {
   /* border: 1px solid red; */
   width: 60%;
@@ -120,4 +120,10 @@ label {
 }
 h6 {
   color: #a6a001;
+}
+@media only screen and (max-width: 1000px) {
+}
+@media only screen and (max-width: 800px) {
+}
+@media only screen and (max-width: 500px) {
 }

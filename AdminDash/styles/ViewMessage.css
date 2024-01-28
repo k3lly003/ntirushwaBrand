@@ -30,7 +30,6 @@ body {
 .logo-cont {
   /* border: 1px solid lime; */
   display: flex;
-  /* flex-direction: column; */
   justify-content: center;
   align-items: center;
   gap: 5px;
@@ -45,26 +44,48 @@ a {
   text-decoration: none;
   color: #fff;
 }
-.profile {
+.message {
   /* border: 1px solid orange; */
   width: 80%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  gap: 2%;
+}
+#postForm {
+  /* border: 1px solid red; */
+  width: 100%;
 }
 .profile h3 {
   color: rgb(149, 149, 3);
 }
 .upper-div {
   /* border: 1px solid yellow; */
-  width: 50%;
+  width: 90%;
 }
 .lower-div {
   /* border: 1px solid white; */
-  width: 50%;
+  width: 90%;
   display: flex;
+  flex-direction: column;
   gap: 10px;
+}
+.bellow-button {
+  /* border: 1px solid green; */
+  width: 100%;
+  margin-top: 3%;
+}
+.bellow-button button {
+  border: 0;
+  border-radius: 3px;
+  padding: 0.5em;
+  width: 50%;
+  background-color: #4f8d3c;
+  cursor: pointer;
+}
+button {
+  color: #000;
 }
 @media only screen and (max-width: 680px) {
   .sidebar {

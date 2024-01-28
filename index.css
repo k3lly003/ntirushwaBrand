@@ -31,7 +31,7 @@ i {
   position: fixed;
   top: 0;
   width: 100%;
-  background-color: rgba(96, 98, 96, 0.458);
+  background-color: rgba(96, 98, 96, 0.741);
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -185,7 +185,7 @@ a {
   /* border: 1px solid green; */
   display: flex;
   justify-content: space-around;
-  width: 60%;
+  width: 80%;
 }
 .words {
   /* border: 1px solid red; */
@@ -220,6 +220,9 @@ a {
 }
 .mama {
   /* border: 1px solid green; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .skills-hidden {
   /* border: 1px solid red; */
@@ -579,7 +582,7 @@ a {
 }
 .in-ico {
   /* border: 1px solid green; */
-  width: 50%;
+  width: 70%;
   display: flex;
 }
 .inputs-buto {
@@ -700,7 +703,7 @@ a {
   width: 60%;
   font-size: 12px;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
 }
 .foot-nav {
   /* border: 1px solid blue; */
@@ -821,6 +824,8 @@ a {
     font-size: 1.2em;
   }
 }
+@media only screen and (max-width: 790px) {
+}
 @media only screen and (max-width: 725px) {
   .foot-third {
     /* border: 1px solid red; */
@@ -829,15 +834,110 @@ a {
   .foot-fourth {
     display: none;
   }
+  .hey-header {
+    display: none;
+  }
 }
 @media only screen and (max-width: 690px) {
+  .about-cont {
+    /* border: 1px solid green; */
+    width: 100%;
+  }
+  .wo-ski-ico {
+    /* border: 1px solid yellow; */
+    width: 100%;
+  }
   .sec4-nav {
+    /* border: 1px solid red; */
     font-size: 0.5em;
+    width: 60%;
+  }
+  .sec4-nav div {
+    font-size: 5%;
+  }
+  .none {
+    display: none;
+  }
+  .port-box {
+    /* border: 1px solid rgb(254, 254, 254); */
+    width: 90%;
+  }
+  .firstbox-cont {
+    /* border: 2px solid blue; */
+    width: 90%;
+    flex-direction: column;
+  }
+  .secondbox-cont {
+    /* border: 2px solid green; */
+    width: 90%;
+    flex-direction: column;
+  }
+  .thirdbox-cont {
+    /* border: 2px solid red; */
+    width: 90%;
+    flex-direction: column;
+  }
+  .one {
+    /* border: 1px solid red; */
+    background-size: cover;
+    width: 100%;
+  }
+  .two {
+    /* border: 1px solid rgb(255, 255, 255); */
+    background-size: cover;
+    background-attachment: fixed;
+    width: 100%;
+  }
+  .three {
+    /* border: 1px solid red; */
+    background-size: cover;
+    background-attachment: fixed;
+    width: 100%;
+  }
+  .four {
+    /* border: 1px solid red; */
+    background-size: cover;
+    background-attachment: fixed;
+    width: 100%;
+  }
+  .five {
+    /* border: 1px solid red; */
+    background: url(./assets/five.png);
+    background-size: cover;
+    background-attachment: fixed;
+    width: 100%;
+  }
+  .six {
+    /* border: 1px solid red; */
+    background-size: cover;
+    background-attachment: fixed;
+    width: 100%;
   }
   .blogs {
+    /* border: 1  px solid rgb(201, 18, 18); */
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
     gap: 1em;
-    width: 30%;
+    width: 65%;
+  }
+  .blog-img img {
+    /* border: 1px solid red; */
+    width: 100%;
+  }
+  .up {
+    font-size: 1.3em;
+  }
+  .up p {
+    /* border: 1px solid green; */
+    font-size: 1.1em;
+  }
+  .low {
+    font-size: 1em;
+  }
+  .low p {
+    /* border: 1px solid rgb(255, 255, 255); */
+    font-size: 1em;
   }
   .nav-list {
     display: none;
@@ -852,13 +952,49 @@ a {
   .dropdown-content {
     display: none;
     position: absolute;
-    background-color: #f9f9f95c;
-    min-width: 160px;
+    right: 2px;
+    background-color: #030303a8;
+    width: 100px;
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
     padding: 12px 16px;
     z-index: 1;
   }
   .dropdown:hover .dropdown-content {
     display: block;
+  }
+}
+@media only screen and (max-width: 530px) {
+  .logo img {
+    /* border: 1px solid green; */
+    width: 4em;
+    height: 4em;
+    margin: 0;
+  }
+  .box-h3 {
+    /* border: 1px solid cyan; */
+    margin: 0;
+  }
+  .box-h3 h3 {
+    /* border: 1px solid red; */
+    font-size: 1.2em;
+  }
+  .box-p {
+    /* border: 1px solid yellow; */
+    font-size: 0.6em;
+    width: 95%;
+    margin: 0;
+  }
+  .box-p p {
+    /* border: 1px solid red; */
+    font-size: 1.2em;
+  }
+  .box {
+    /* border: 1px solid yellow; */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 70%;
+    height: 15em;
   }
 }

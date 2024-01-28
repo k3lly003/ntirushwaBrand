@@ -7,7 +7,7 @@
 body {
   display: flex;
   gap: 5%;
-  background-color: rgb(231, 231, 231);
+  background-color: rgb(255, 255, 255);
 }
 .dropdown {
   display: none;
@@ -59,30 +59,55 @@ body {
   justify-content: center;
   align-items: center;
 }
-.lower-blog {
-  /* border: 1px solid rgb(205, 161, 16); */
-  width: 60%;
-}
 input {
-  border-radius: 5px;
-  border: 0;
-}
-.nomo {
-  width: 90%;
+  /* border-radius: 5px; */
   padding-bottom: 2%;
 }
+.date {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+.title {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+.add-blog {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+#editor {
+  /* border: 1px solid green; */
+  border-radius: 5px;
+  width: 100%;
+}
+#postForm {
+  /* border: 1px solid red; */
+  width: 80%;
+}
+.nomo {
+  width: 99.5%;
+  padding-bottom: 2%;
+  background-color: #ffffff3e;
+}
 .numo {
-  width: 90%;
+  width: 100%;
   padding-bottom: 20%;
 }
 .bellow-button {
   /* border: 1px solid green; */
-  width: 30%;
+  width: 100%;
   margin-top: 3%;
 }
 .bellow-button button {
-  border: 2px solid #eae30f;
+  border: 0;
+  background-color: #50b836;
+  border-radius: 3px;
+  padding: 0.7em;
   width: 100%;
+  cursor: pointer;
 }
 a {
   text-decoration: none;

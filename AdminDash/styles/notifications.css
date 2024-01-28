@@ -49,43 +49,53 @@ body {
   gap: 2em;
   width: 100%;
 }
-h4 {
+.noti-feed {
+  /* border: 1px solid red; */
+  display: flex;
+  /* justify-content: space-between; */
+  width: 50%;
+}
+.noti-feed h3 {
   color: #a6a001;
 }
 p {
   color: #fff;
 }
+.msgs {
+  /* border: 1px solid red; */
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  /* align-items: center; */
+  gap: 1em;
+}
 .msg-card {
-  /* border: 1px solid rgb(255, 255, 255); */
-  width: 70%;
+  /* border: 1px solid rgb(2, 224, 47); */
+  width: 90%;
+  height: 60px;
   border-radius: 5px;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
-  background-color: #4b4b4b;
+  background-color: #4b4b4bba;
 }
 .text {
   /* border: 1px solid yellow; */
-  /* display: block;
-  justify-content: flex-start;
-  align-items: center; */
 }
 .eye {
   /* border: 1px solid orange; */
-}
-.msgs {
-  /* border: 1px solid red; */
-  width: 90%;
+  width: 20%;
   display: flex;
-  flex-direction: column;
+  justify-content: center;
   align-items: center;
-  gap: 1em;
+  justify-content: space-evenly;
 }
-.noti-feed {
-  /* border: 1px solid red; */
-  display: flex;
-  justify-content: space-between;
-  width: 50%;
+.delete {
+  border: 1px solid #000;
+  border-radius: 5px;
+  background-color: #2322225b;
+  padding: 5%;
+  cursor: pointer;
 }
 a {
   text-decoration: none;
@@ -94,6 +104,20 @@ a {
 @media only screen and (max-width: 680px) {
   .sidebar {
     display: none;
+  }
+  .msg-card {
+    /* border: 1px solid rgb(2, 224, 47); */
+    width: 100%; /*here*/
+    height: 60px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #4b4b4bba;
+  }
+  .notification {
+    position: absolute;
+    margin-top: 20%;
   }
   .dropdown {
     /* border: 1px solid red; */
@@ -112,5 +136,14 @@ a {
   }
   .dropdown:hover .dropdown-content {
     display: block;
+  }
+}
+@media only screen and (max-width: 495px) {
+  h4 {
+    font-size: 1em;
+    color: #a6a001;
+  }
+  p {
+    font-size: 0.5em;
   }
 }

@@ -19,26 +19,24 @@
       </a>
     </div>
     <div class="bodi">
-      <form action="" class="login-form">
+      <form action="" class="login-form" onsubmit="return validateForm()">
         <div class="header">
           <h1>SignUp</h1>
         </div>
         <div class="text">
           <label for="name">Name</label>
-          <input type="text" />
+          <input type="text" id="name" />
         </div>
         <div class="text">
           <label for="email">Email</label>
-          <input type="text" />
+          <input type="text" id="email" />
         </div>
         <div class="pass">
           <label for="Password">Password</label>
-          <input type="password" />
+          <input type="password" id="pass" />
         </div>
         <div class="button">
-          <a href="./dash.html">
-            <p class="log-buto">send</p>
-          </a>
+          <button type="submit" class="log-buto">Send</button>
         </div>
         <div class="circle2"></div>
       </form>
@@ -48,5 +46,30 @@
       </div>
     </div>
     <div class="circle3"></div>
+    <script>
+      function is_valid_email(email) {
+        var emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+        return emailPattern.test(email);
+      }
+      function validateForm() {
+        var nameInput = document.getElementById("name").value;
+        var passwordInput = document.getElementById("pass").value;
+        var emailInput = document.getElementById("email").value;
+        if (nameInput.trim() === "") {
+          alert("Name cannot be empty");
+          return false;
+        }
+        if (passwordInput.trim() === "") {
+          alert("Password cannot be empty");
+          return false;
+        }
+        if (!is_valid_email(emailInput)) {
+          alert("Invalid email address");
+          return false;
+        }
+        window.location.href = "./dash.html";
+        return false;
+      }
+    </script>
   </body>
 </html>

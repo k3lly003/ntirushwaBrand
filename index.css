@@ -26,6 +26,7 @@ i {
   font-family: "Poppins", sans-serif;
   font-family: "Roboto Mono", monospace;
   font-family: "Syne", sans-serif;
+  box-sizing: border-box;
 }
 .navigation {
   position: fixed;
@@ -523,11 +524,35 @@ a {
   font-size: 1.5em;
   color: #a6a001;
 }
+@keyframes slide {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-20%);
+  }
+}
+.blog-container {
+  /* border: 1px solid red; */
+  width: 60%;
+  overflow: hidden;
+  height: 28em;
+}
+
+.blog-container :hover .blogs {
+  animation-play-state: paused;
+}
 .blogs {
   /* border: 1px solid green; */
   display: flex;
   gap: 1.5em;
-  width: 50%;
+  width: 100vw;
+  animation: 4s slide infinite linear;
+}
+.child {
+  /* border: 5px solid yellow; */
+  height: 100%;
+  margin-bottom: 2em;
 }
 .blog-img img {
   /* border: 2px solid yellow; */
@@ -943,6 +968,7 @@ a {
     display: none;
   }
   .dropdown {
+    /* border: 1px solid red; */
     position: relative;
     display: inline-block;
   }
@@ -950,14 +976,26 @@ a {
     font-size: 2em;
   }
   .dropdown-content {
-    display: none;
+    /* border: 1px solid green; */
     position: absolute;
-    right: 2px;
-    background-color: #030303a8;
-    width: 100px;
+    right: 2em;
+    background-color: #030303;
+    width: 20em;
+    height: 30em;
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
     padding: 12px 16px;
     z-index: 1;
+  }
+  .dropdown-content a {
+    border: 1px solid rgb(248, 248, 248);
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 3em;
+  }
+  .dropdown-content a:hover {
+    background-color: rgb(128, 185, 72);
   }
   .dropdown:hover .dropdown-content {
     display: block;

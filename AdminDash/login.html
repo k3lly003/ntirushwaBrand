@@ -20,7 +20,7 @@
     </div>
     <div class="bodi">
       <div class="circle1"></div>
-      <form action="" class="login-form" onsubmit="return validateForm()">
+      <form action="" class="login-form" onsubmit="validateForm()">
         <div class="header">
           <h1>Login</h1>
         </div>
@@ -53,11 +53,9 @@
         var passwordInput = document.getElementById("pass").value;
         if (nameInput.trim() === "") {
           alert("Name cannot be empty");
-          return false;
         }
         if (passwordInput.trim() === "") {
           alert("Password cannot be empty");
-          return false;
         }
         window.location.href = "./dash.html";
         return false;

@@ -105,13 +105,13 @@ h3 {
   align-items: center;
 }
 .display-input {
-  /* border: 2px solid green; */
+  border: 2px solid green;
   border-radius: 5px;
   position: absolute;
   margin-top: 15%;
   padding-top: 5%;
   background-color: #443f3fb7;
-  display: none;
+  display: block;
   width: 80%;
   justify-content: space-between;
   z-index: 2;
@@ -161,9 +161,10 @@ h3 {
   cursor: pointer;
 }
 .no:hover {
-  color: rgb(255, 14, 14);
+  /* color: rgb(255, 14, 14); */
 }
 .feedbacks {
+  /* border: 1px solid red; */
   background-color: #fff;
 }
 .comments {
@@ -172,7 +173,6 @@ h3 {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
   gap: 2em;
 }
 .personal-comment {

@@ -110,7 +110,6 @@
       </form>
     <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
     <script>
-      // Initialize Quill
       var quill = new Quill("#editor", {
         theme: "snow",
         modules: {
@@ -121,21 +120,18 @@
           ],
         },
       });
-      // Handle form submission
       document
         .getElementById("postForm")
         .addEventListener("submit", function (event) {
           event.preventDefault();
-          // Get values from the form
           var title = document.getElementById("title").value;
           var content = quill.root.innerHTML;
-          // You can do something with the values here, like sending them to the server
           console.log("Title:", title);
           console.log("Content:", content);
-          // Reset the form
           document.getElementById("postForm").reset();
-          quill.setText(""); // Clear the Quill editor
+          quill.setText("");
         });
     </script>
+    <script src='./script/AddBlog.js'></script>
   </body>
 </html>

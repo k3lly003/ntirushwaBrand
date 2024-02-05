@@ -25,6 +25,12 @@
   />
   <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet" />
   <link rel="stylesheet" href="../styles/AddBlog.css" />
+  <!-- text editor -->
+  <link rel="stylesheet" href="richtexteditor/rte_theme_default.css" />
+    <script type="text/javascript" src="richtexteditor/rte.js"></script>
+      <script>RTE_DefaultConfig.url_base='richtexteditor'</script>
+    <script type="text/javascript" src='richtexteditor/plugins/all_plugins.js'></script>
+    
   <body>
     <div class="sidebar">
       <a href="./dash.html">
@@ -77,17 +83,17 @@
       <div class="upper-blog">
         <h1>Create Blog</h1>
       </div>
-      <form id="postForm">
+      <form id="postForm" onsubmit="validateForm()">
         <div class="date">
-          <label for="title">Add Date:</label>
+          <label for="date">Add Date:</label>
           <input
             type="date"
-            id="title"
-            name="title"
+            id="date"
+            name="date"
             class="nomo"
             placeholder="date"
-            required
           />
+          <p id="error-one">one</p>
         </div>
         <div class="title">
           <label for="content">Add Title:</label>
@@ -97,41 +103,19 @@
             name="title"
             class="nomo"
             placeholder="title"
-            required
           />
+          <p id="error-two">two</p>
         </div>
         <div class="add-blog">
           <label for="content">Add Blog:</label>
-          <div id="editor" style="height: 200px"></div>
+          <div id="editor" style="height: 200px" id="blog"></div>
+          <p id="error-three">three</p>
         </div>
         <div class="bellow-button">
           <button type="submit">Confirm</button>
         </div>
       </form>
     <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
-    <script>
-      var quill = new Quill("#editor", {
-        theme: "snow",
-        modules: {
-          toolbar: [
-            ["bold", "italic", "underline", "strike"],
-            ["link", "image", "video"],
-            ["clean"],
-          ],
-        },
-      });
-      document
-        .getElementById("postForm")
-        .addEventListener("submit", function (event) {
-          event.preventDefault();
-          var title = document.getElementById("title").value;
-          var content = quill.root.innerHTML;
-          console.log("Title:", title);
-          console.log("Content:", content);
-          document.getElementById("postForm").reset();
-          quill.setText("");
-        });
-    </script>
     <script src='./script/AddBlog.js'></script>
   </body>
 </html>

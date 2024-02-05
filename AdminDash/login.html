@@ -20,17 +20,19 @@
     </div>
     <div class="bodi">
       <div class="circle1"></div>
-      <form action="" class="login-form" onsubmit="validateForm()">
+      <form class="login-form" onsubmit="validateForm()">
         <div class="header">
           <h1>Login</h1>
         </div>
         <div class="text">
           <label for="name">Name</label>
           <input type="text" id="name" />
+          <p id="error-one"></p>
         </div>
         <div class="pass">
           <label for="Password">Password</label>
           <input type="password" id="pass" />
+          <p id="error-two"></p>
         </div>
         <div class="button">
           <button type="submit" class="log-buto">Send</button>
@@ -43,23 +45,6 @@
       </div>
     </div>
     <div class="circle3"></div>
-    <script>
-      function is_valid_email(email) {
-        var emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-        return emailPattern.test(email);
-      }
-      function validateForm() {
-        var nameInput = document.getElementById("name").value;
-        var passwordInput = document.getElementById("pass").value;
-        if (nameInput.trim() === "") {
-          alert("Name cannot be empty");
-        }
-        if (passwordInput.trim() === "") {
-          alert("Password cannot be empty");
-        }
-        window.location.href = "./dash.html";
-        return false;
-      }
-    </script>
+    <script src="./pages/script/login.js"></script>
   </body>
 </html>

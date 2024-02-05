@@ -12,31 +12,77 @@ const observer = new IntersectionObserver((entries) => {
 const hiddenElements = document.querySelectorAll("section");
 hiddenElements.forEach((el) => observer.observe(el));
 /*Humburger */
-let dropdown = document.getElementsByClassName()[0];
-dropdown;
+const content = document.getElementById("content");
+const link = document.getElementsByClassName("lin");
+
+function dropDown() {
+  content.style.visibility = "visible";
+}
+for (let i = 0; i <= link.length; i++) {
+  link[i].addEventListener("click", () => {
+    content.style.visibility = "hidden";
+  });
+}
+
 /* Landing page form validation*/
 function is_valid_email(email) {
   var emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
   return emailPattern.test(email);
 }
-function validateForm() {
+document.getElementById("name").addEventListener("input", validateName);
+document.getElementById("email").addEventListener("input", validateEmail);
+document.getElementById("message").addEventListener("input", validateMessage);
+
+function validateName() {
   var nameInput = document.getElementById("name").value;
-  var emailInput = document.getElementById("email").value;
-  var messageInput = document.getElementById("message").value;
+  var errOne = document.getElementById("error-one");
+
   if (nameInput.trim() === "") {
-    alert("Name cannot be empty");
+    errOne.style = "color: red";
+    errOne.innerHTML = "Name cannot be empty";
     return false;
-  } else if (emailInput.trim() === "") {
-    alert("Your email is empty");
+  } else {
+    errOne.innerHTML = "";
+  }
+}
+function validateEmail() {
+  var emailInput = document.getElementById("email").value;
+  var errTwo = document.getElementById("error-two");
+  if (emailInput.trim() === "") {
+    errTwo.style = "color: red";
+    errTwo.innerHTML = "Email cannot be empty";
+    return false;
   } else if (!is_valid_email(emailInput)) {
-    alert("Invalid email address");
-  } else if (messageInput.trim() === "") {
-    alert("Password cannot be empty");
+    errTwo.style = "color: red";
+    errTwo.innerHTML = "Invalid email address";
+    return false;
+  } else {
+    errTwo.innerHTML = "";
+  }
+}
+function validateMessage() {
+  var messageInput = document.getElementById("message").value;
+  var errThree = document.getElementById("error-three");
+
+  if (messageInput.trim() === "") {
+    errThree.style = "color: red";
+    errThree.innerHTML = "Message cannot be empty";
+    return false;
   } else if (messageInput.length < 5) {
-    alert("Message should not exceed 4 characters");
+    errThree.style = "color: red";
+    errThree.innerHTML = "Message should not exceed 4 characters";
+    return false;
+  } else {
+    errThree.innerHTML = "";
   }
   window.location.href = "./index.html#contact";
-  return false;
+}
+function validateForm() {
+  var isValidName = validateName();
+  var isValidEmail = validateEmail();
+  var isValidMessage = validateMessage();
+
+  return isValidName && isValidEmail && isValidMessage;
 }
 /*  Blogs Horiziontal infinite slide*/
 var copy = document.querySelector(".blogs").cloneNode(true);

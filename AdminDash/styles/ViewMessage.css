@@ -99,7 +99,7 @@ button {
     font-size: 2em;
   }
   .dropdown {
-    border: 1px solid red;
+    /* border: 1px solid red; */
     position: relative;
     display: inline-block;
     width: 10%;

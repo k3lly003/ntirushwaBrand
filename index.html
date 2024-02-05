@@ -41,13 +41,13 @@
           </a>
         </div>
          <div class="dropdown">
-           <i class="fa fa-bars" aria-hidden="true" class="dropbtn"></i>
-           <div class="dropdown-content">
-              <a href="./index.html#about"><p>About</p></a>
-              <a href="./index.html#service"><p>Services</p></a>
-              <a href="./index.html#portfolio"><p>Portfolio</p></a>
-              <a href="./index.html#blogs"><p>Blogs</p></a>
-              <a href="./index.html#contact"><p>Contact</p></a>
+           <i class="fa fa-bars" aria-hidden="true" class="dropbtn" id="dropbtn" onclick="dropDown()">menu</i>
+           <div class="dropdown-content" id="content">
+              <a href="./index.html#about" class="lin"><p>About</p></a>
+              <a href="./index.html#service" class="lin"><p>Services</p></a>
+              <a href="./index.html#portfolio" class="lin"><p>Portfolio</p></a>
+              <a href="./index.html#blogs" class="lin"><p>Blogs</p></a>
+              <a href="./index.html#contact" class="lin"><p>Contact</p></a>
             </div>
           </div>
         </div>
@@ -444,6 +444,34 @@
                    </div>
                  </div>
                </div>
+               <div class="child">
+                <div class="blog-img">
+                  <img src="./assets/blog-one.png" alt="">
+                </div>
+                <a href="./single-blog-view.html">
+                  <div>
+                   <div class="up">
+                     <p>Reasons Bussiness Needs Agency</p>
+                   </div>
+                   <div class="low">
+                     <p>
+                       Design Club is a digital agency specialized in ecommerce. We
+                       build scalable, high-end web shops.
+                     </p>
+                   </div>
+                 </div>
+                </a>
+                <div class="feed">
+                  <div class="like">
+                    <i class="fa fa-thumbs-o-up" aria-hidden="true"></i>
+                    <p>27</p>
+                  </div>
+                  <div class="come">
+                    <i class="fa fa-comment-o" aria-hidden="true"></i>
+                    <p>11</p>
+                  </div>
+                </div>
+              </div>
              </a>
            </div>
         </div>
@@ -457,16 +485,19 @@
         </div>
         <div class="in-ico">
           <div class="inputs-buto">
-            <form action="" onsubmit="validateForm()">
-             <div class="in-group">
-               <input type="text" placeholder="names" class="normal" id="name"/><br />
-               <input type="text" placeholder="email" class="normal" id="email"/><br />
-               <input type="text" placeholder="message" class="unique" id="message"/>
-             </div>
-             <div class="contact-buto">  
-               <button type="submit">send</button>
-             </div>
-           </form>
+              <form action="" onsubmit="return validateForm()">
+              <div class="in-group">
+                <input type="text" placeholder="names" class="normal" id="name"/><br />
+                <p id="error-one"></p>
+                <input type="text" placeholder="email" class="normal" id="email"/><br />
+                <p id="error-two"></p>
+                <input type="text" placeholder="message" class="unique" id="message"/>
+                <p id="error-three"></p>
+              </div>
+              <div class="contact-buto">  
+                <button type="submit">send</button>
+              </div>
+            </form>
           </div>
           <div class="address">
             <div class="addr-one">

@@ -70,7 +70,7 @@ a {
   display: flex;
   flex-direction: column;
   gap: 2em;
-  width: 60%;
+  width: 50%;
 }
 p {
   /* border: 1px solid red; */

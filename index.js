@@ -13,16 +13,23 @@ const hiddenElements = document.querySelectorAll("section");
 hiddenElements.forEach((el) => observer.observe(el));
 /*Humburger */
 const content = document.getElementById("content");
-const link = document.getElementsByClassName("lin");
-
+const link = document.querySelectorAll(".lin");
+console.log(link);
 function dropDown() {
   content.style.visibility = "visible";
 }
-for (let i = 0; i <= link.length; i++) {
+for (let i = 0; i < link.length; i++) {
   link[i].addEventListener("click", () => {
     content.style.visibility = "hidden";
   });
 }
+/*accessing css*/
+let blogCont = document
+  .querySelector(".blog-container")
+  .classList.add("blog-container");
+let blogs = document.querySelector(".blogs").classList.add("blogs");
+let child = document.querySelector(".child").classList.add("child");
+let feed = document.querySelector(".feed").classList.add("feed");
 
 /* Landing page form validation*/
 function is_valid_email(email) {
@@ -84,6 +91,48 @@ function validateForm() {
 
   return isValidName && isValidEmail && isValidMessage;
 }
-/*  Blogs Horiziontal infinite slide*/
-var copy = document.querySelector(".blogs").cloneNode(true);
-document.querySelector(".blog-container").appendChild(copy);
+console.log("Hello developer");
+/*Blog rendering*/
+let data = [];
+let blogList = [];
+const blogContainer = document.querySelector(".blogs");
+// renderBlogs();
+// function renderBlogs() {
+data = localStorage.getItem("blogs");
+blogList = JSON.parse(data);
+console.log(blogList);
+for (let i = 0; i < blogList.length; i++) {
+  let card = ` <div class="child">
+    <div class="blog-img">
+      <img src="${blogList[i].image}" alt="">
+    </div>
+    <a href="./single-blog-view.html?id=${i}">
+      <div>
+       <div class="up">
+         <p>${blogList[i].title}</p>
+       </div>
+       <div class="low">
+         <p>
+          ${blogList[i].description}
+         </p>
+       </div>
+     </div>
+    </a>
+    <div class="feed">
+      <div class="like">
+        <i class="fa fa-thumbs-o-up" aria-hidden="true"></i>
+        <p>27</p>
+      </div>
+      <div class="come">
+        <i class="fa fa-comment-o" aria-hidden="true"></i>
+        <p>11</p>
+      </div>
+    </div>
+  </div>`;
+  blogContainer.insertAdjacentHTML("beforeend", card);
+}
+// }
+function showSingleBlog(id) {
+  localStorage.setItem("currentId", id);
+  window.location.href = "./single-blog-view.html";
+}

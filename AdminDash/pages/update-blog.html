@@ -81,9 +81,9 @@
     </div>
     <div class="profile">
       <div class="upper-blog">
-        <h1>Create Blog</h1>
+        <h1>Update Blog</h1>
       </div>
-      <form id="postForm" onsubmit="validateForm()">
+      <form id="postForm">
         <div class="date">
           <label for="date">Add Date:</label>
           <input
@@ -120,7 +120,7 @@
         <div class="add-blog">
           <label for="content">Add Blog:</label>
           <div>
-            <textarea name="description" id="description" cols="100" rows="5" placeholder="add a description"></textarea>
+            <textarea name="description" id="description" cols="100" rows="3" placeholder="add a description"></textarea>
           </div>
           <div id="editor" style="height: 200px" id="blog"></div>
           <p id="error-four"></p>
@@ -130,6 +130,6 @@
         </div>
       </form>
     <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
-    <script src='./script/AddBlog.js'></script>
+    <script src='./script/blog-update.js'></script>
   </body>
 </html>

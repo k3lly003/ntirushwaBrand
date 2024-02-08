@@ -13,6 +13,7 @@ function validateName() {
     errOne.innerHTML = "";
   }
 }
+
 function validatePassword() {
   var passwordInput = document.getElementById("pass").value;
   var errTwo = document.getElementById("error-two");
@@ -23,16 +24,17 @@ function validatePassword() {
     return false;
   } else if (passwordInput.length < 5) {
     errTwo.style = "color: red";
-    errTwo.innerHTML = "required a strong password of atleast 5 words";
+    errTwo.innerHTML = "Required a strong password of at least 5 characters";
     return false;
   } else {
     errTwo.innerHTML = "";
   }
   window.location.href = "./dash.html";
 }
+
 function validateForm() {
   var isValidName = validateName();
-  var isValidMessage = validatePassword();
+  var isValidPassword = validatePassword();
 
-  return isValidName && isValidMessage;
+  return isValidName && isValidPassword;
 }

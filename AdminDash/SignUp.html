@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sign Up</title>
+  </head>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Poppins:ital,wght@1,900&family=Roboto+Mono:wght@300&family=Syne&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="./styles/signup.css" />
+  <body>
+    <div class="login-nav">
+      <a href="../index.html">
+        <h1>ntirushwa <span class="dot">.</span></h1>
+      </a>
+    </div>
+    <div class="bodi">
+      <form class="login-form" onsubmit="return validateForm()">
+        <div class="header">
+          <h1>SignUp</h1>
+        </div>
+        <div class="text">
+          <label for="name">Name</label>
+          <input type="text" id="name" />
+          <p id="error-one"></p>
+        </div>
+        <div class="text">
+          <label for="email">Email</label>
+          <input type="text" id="email" />
+          <p id="error-two"></p>
+        </div>
+        <div class="pass">
+          <label for="Password">Password</label>
+          <input type="password" id="pass" />
+          <p id="error-three"></p>
+        </div>
+        <div class="button">
+          <button type="submit" class="log-buto">Send</button>
+        </div>
+        <div class="circle2"></div>
+      </form>
+      <div class="forget">
+        <h3>Forgot Password <span class="dot">?</span></h3>
+        <h6>Already have an account? <a href="./login.html"> Login here</a></h6>
+      </div>
+    </div>
+    <div class="circle3"></div>
+    <script src="./pages/script/signup.js"></script>
+  </body>
+</html>

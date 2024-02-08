@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Profile</title>
+  </head>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Poppins:ital,wght@1,900&family=Roboto+Mono:wght@300&family=Syne&display=swap"
+    rel="stylesheet"
+  />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+  />
+
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
+  <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet" />
+  <link rel="stylesheet" href="../styles/AddBlog.css" />
+  <!-- text editor -->
+  <link rel="stylesheet" href="richtexteditor/rte_theme_default.css" />
+    <script type="text/javascript" src="richtexteditor/rte.js"></script>
+      <script>RTE_DefaultConfig.url_base='richtexteditor'</script>
+    <script type="text/javascript" src='richtexteditor/plugins/all_plugins.js'></script>
+    
+  <body>
+    <div class="sidebar">
+      <a href="./dash.html">
+        <div class="logo-cont">
+          <h2>Dashboard</h2>
+          <img src="/assets/dashboard.png" alt="" class="logo" />
+        </div>
+      </a>
+      <a href="./notifications.html">
+        <div class="logo-cont">
+          <h3>notification</h3>
+          <img src="/assets/notification.png" alt="" class="logo" />
+        </div>
+      </a>
+      <a href="./profile.html">
+        <div class="logo-cont">
+          <h3>profile</h3>
+          <img src="/assets/profile.png" alt="" class="logo" />
+        </div>
+      </a>
+      <a href="./blogs.html">
+        <div class="logo-cont">
+          <h3>blogs</h3>
+          <img src="/assets/blog.png" alt="" class="logo" />
+        </div>
+      </a>
+      <a href="./themes.html">
+        <div class="logo-cont">
+          <h3>Settings</h3>
+          <img src="/assets/theme.png" alt="" class="logo" />
+        </div>
+      </a>
+      <div class="account">
+        <img src="" alt="" />
+        <button>Logout</button>
+      </div>
+    </div>
+    <div class="dropdown">
+      <i class="fa fa-bars" aria-hidden="true" class="dropbtn"></i>
+      <div class="dropdown-content">
+        <a href="./dash.html"><p>Dashboard</p></a>
+        <a href="./notifications.html"><p>Notification</p></a>
+        <a href="./profile.html"><p>Profile</p></a>
+        <a href="./blogs.html"><p>Blogs</p></a>
+        <a href="./themes.html"><p>Theme</p></a>
+        <a href=""><button>Theme</button></a>
+      </div>
+    </div>
+    <div class="profile">
+      <div class="upper-blog">
+        <h1>Update Blog</h1>
+      </div>
+      <form id="postForm">
+        <div class="date">
+          <label for="date">Add Date:</label>
+          <input
+            type="date"
+            id="date"
+            name="date"
+            class="nomo"
+            placeholder="date"
+          />
+          <p id="error-one"></p>
+        </div>
+        <div class="title">
+          <label for="content">Add Title:</label>
+          <input
+            type="text"
+            id="title"
+            name="title"
+            class="nomo"
+            placeholder="title"
+          />
+          <p id="error-two"></p>
+        </div>
+        <div class="title">
+          <label for="content">Add Image:</label>
+          <input
+            type="file"
+            id="image"
+            name="image"
+            class="nomo"
+            accept="image/*" 
+          />
+          <p id="error-three"></p>
+        </div>
+        <div class="add-blog">
+          <label for="content">Add Blog:</label>
+          <div>
+            <textarea name="description" id="description" cols="100" rows="3" placeholder="add a description"></textarea>
+          </div>
+          <div id="editor" style="height: 200px" id="blog"></div>
+          <p id="error-four"></p>
+        </div>
+        <div class="bellow-button">
+          <button type="submit">Confirm</button>
+        </div>
+      </form>
+    <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
+    <script src='./script/blog-update.js'></script>
+  </body>
+</html>

@@ -27,9 +27,9 @@ for (let i = 0; i < link.length; i++) {
 let blogCont = document
   .querySelector(".blog-container")
   .classList.add("blog-container");
-let blogs = document.querySelector(".blogs").classList.add("blogs");
-let child = document.querySelector(".child").classList.add("child");
-let feed = document.querySelector(".feed").classList.add("feed");
+// let blogs = document.querySelector(".blogs").classList.add("blogs");
+// let child = document.querySelector(".child").classList.add("child");
+// let feed = document.querySelector(".feed").classList.add("feed");
 
 /* Landing page form validation*/
 function is_valid_email(email) {

@@ -17,8 +17,5 @@ data = localStorage.getItem("blogs");
 blogList = JSON.parse(data);
 document.getElementById("title").innerText = blogList[blogId].title;
 document.getElementById("date").innerText = blogList[blogId].date;
-document
-  .getElementById("image")
-  .setAttribute("src", blogList[blogId].image)
-  .document.getElementById("over-text").innerHTML = blogList[blogId].content;
-window.location.reload();
+document.getElementById("image").setAttribute("src", blogList[blogId].image);
+document.getElementById("over-text").innerHTML = blogList[blogId].content;

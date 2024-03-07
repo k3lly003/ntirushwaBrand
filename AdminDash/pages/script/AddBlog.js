@@ -1,4 +1,5 @@
 /*text editor validation*/
+
 var quill = new Quill("#editor", {
   theme: "snow",
   modules: {
@@ -17,28 +18,26 @@ document
   .getElementById("postForm")
   .addEventListener("submit", function (event) {
     event.preventDefault();
-    var date = document.getElementById("date").value;
     var title = document.getElementById("title").value;
     var image = document.getElementById("image").value;
     var content = quill.root.innerHTML;
     var description = document.getElementById("description").value;
     // Retrieve existing data from local storage
-    var existingData = localStorage.getItem("blogs");
-    var existingBlogs = existingData ? JSON.parse(existingData) : [];
+    // var existingData = localStorage.getItem("blogs");
+    // var existingBlogs = existingData ? JSON.parse(existingData) : [];
 
     // Add the new blog to the existing blogs
     const fileReader = new FileReader();
     fileReader.addEventListener("load", () => {
       // console.log(fileReader.result);
       const imgUrl = fileReader.result;
-      var newBlog = {
-        title: title,
-        date: date,
-        image: imgUrl,
-        content: content,
-        description: description,
-      };
-      existingBlogs.push(newBlog);
+      // var newBlog = {
+      //   title: title,
+      //   image: imgUrl,
+      //   content: content,
+      //   description: description,
+      // };
+      // existingBlogs.push(newBlog);
 
       // Save the updated blogs array to local storage
       localStorage.setItem("blogs", JSON.stringify(existingBlogs));
@@ -50,21 +49,7 @@ document
     quill.setText("");
   });
 
-document.getElementById("date").addEventListener("input", validateDate);
 document.getElementById("title").addEventListener("input", validateTitle);
-
-function validateDate() {
-  var DateInput = document.getElementById("date").value;
-  var errOne = document.getElementById("error-one");
-
-  if (DateInput.trim() === "") {
-    errOne.style.color = "red"; // use style.color to set color
-    errOne.innerHTML = "Date cannot be empty";
-    return false;
-  } else {
-    errOne.innerHTML = "";
-  }
-}
 
 function validateTitle() {
   var titleInput = document.getElementById("title").value;
@@ -126,3 +111,39 @@ function validateForm() {
     return false;
   }
 }
+
+//INTEGRATION CREATE BLOG
+
+const createBlogPost = async () => {
+  //getting input values
+  const title = document.getElementById("title").value;
+  const image = document.getElementById("image").value;
+  const content = quill.root.innerHTML;
+  const description = document.getElementById("description").value;
+
+  const url = "https://your-backend-api.com/api/blogs";
+
+  try {
+    const response = await axios.post(url, {
+      title,
+      image,
+      description,
+      content,
+    });
+    // return response.data;
+    console.log("THE BLOG HAVE BEEN CREATED SUCCESFULLY", response.data);
+  } catch (error) {
+    throw new Error("Failed to create blog post");
+  }
+};
+
+// Usage example
+// createBlogPost("New Blog Post", "This is the content of the new blog post")
+//   .then((data) => {
+//     console.log("Blog post created:", data);
+//     // Handle the response data as needed
+//   })
+//   .catch((error) => {
+//     console.error("Error creating blog post:", error);
+//     res;
+//   });

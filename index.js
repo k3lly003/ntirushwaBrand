@@ -24,9 +24,9 @@ for (let i = 0; i < link.length; i++) {
   });
 }
 /*accessing css*/
-let blogCont = document
-  .querySelector(".blog-container")
-  .classList.add("blog-container");
+// let blogCont = document
+//   .querySelector(".blog-container")
+//   .classList.add("blog-container");
 // let blogs = document.querySelector(".blogs").classList.add("blogs");
 // let child = document.querySelector(".child").classList.add("child");
 // let feed = document.querySelector(".feed").classList.add("feed");
@@ -88,25 +88,33 @@ function validateForm() {
   var isValidName = validateName();
   var isValidEmail = validateEmail();
   var isValidMessage = validateMessage();
+  var handle;
 
   return isValidName && isValidEmail && isValidMessage;
 }
-console.log("Hello developer");
+fetch(`http://localhost:8000/api/blogs`)
+  .then((res) => {
+    return res.json();
+  })
+  .then((data) => {
+    renderBlogs(data);
+    console.log(data);
+  });
+
 /*Blog rendering*/
-let data = [];
+
 let blogList = [];
 const blogContainer = document.querySelector(".blogs");
 // renderBlogs();
-// function renderBlogs() {
-data = localStorage.getItem("blogs");
-blogList = JSON.parse(data);
-console.log(blogList);
-for (let i = 0; i < blogList.length; i++) {
-  let card = ` <div class="child">
+function renderBlogs(data) {
+  blogList = data;
+  // console.log(blogList);
+  for (let i = 0; i < blogList.length; i++) {
+    let card = ` <div class="child">
     <div class="blog-img">
       <img src="${blogList[i].image}" alt="">
     </div>
-    <a href="./single-blog-view.html?id=${i}">
+    <a href="./single-blog-view.html?id=${blogList[i]._id}">
       <div>
        <div class="up">
          <p>${blogList[i].title}</p>
@@ -123,15 +131,15 @@ for (let i = 0; i < blogList.length; i++) {
         <i class="fa fa-thumbs-o-up" aria-hidden="true"></i>
         <p>27</p>
       </div>
-      <div class="come">
+     <div class="come">
         <i class="fa fa-comment-o" aria-hidden="true"></i>
         <p>11</p>
-      </div>
-    </div>
-  </div>`;
-  blogContainer.insertAdjacentHTML("beforeend", card);
+       </div>
+     </div>
+   </div>`;
+    blogContainer.insertAdjacentHTML("beforeend", card);
+  }
 }
-// }
 function showSingleBlog(id) {
   localStorage.setItem("currentId", id);
   window.location.href = "./single-blog-view.html";

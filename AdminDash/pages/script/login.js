@@ -1,40 +1,33 @@
-document.getElementById("name").addEventListener("input", validateName);
-document.getElementById("pass").addEventListener("input", validatePassword);
-
-function validateName() {
-  var nameInput = document.getElementById("name").value;
-  var errOne = document.getElementById("error-one");
-
-  if (nameInput.trim() === "") {
-    errOne.style = "color: red";
-    errOne.innerHTML = "Name cannot be empty";
-    return false;
-  } else {
-    errOne.innerHTML = "";
-  }
+function is_valid_email(email) {
+  var emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+  return emailPattern.test(email);
 }
 
-function validatePassword() {
-  var passwordInput = document.getElementById("pass").value;
-  var errTwo = document.getElementById("error-two");
+const signinForm = document.querySelector("#signin");
+signinForm.addEventListener("submit", (e) => {
+  e.preventDefault();
+  const email = document.getElementById("email").value;
+  const password = document.getElementById("pass").value;
 
-  if (passwordInput.trim() === "") {
-    errTwo.style = "color: red";
-    errTwo.innerHTML = "Password cannot be empty";
-    return false;
-  } else if (passwordInput.length < 5) {
-    errTwo.style = "color: red";
-    errTwo.innerHTML = "Required a strong password of at least 5 characters";
-    return false;
-  } else {
-    errTwo.innerHTML = "";
-  }
-  window.location.href = "./dash.html";
-}
-
-function validateForm() {
-  var isValidName = validateName();
-  var isValidPassword = validatePassword();
-
-  return isValidName && isValidPassword;
-}
+  const data = {
+    email,
+    password,
+  };
+  console.log(data);
+  fetch("http://localhost:8000/api/signin", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(data),
+  })
+    .then((res) => res.json())
+    .then((data) => {
+      console.log(data.userType);
+      localStorage.setItem("token", JSON.stringify(data.token));
+      if (data.userType == "admin") {
+        window.location.href = "./dash.html";
+        alert(`WELCOME TO YOUR DASHBOARD!`);
+      } else {
+        window.location.href = "../index.html";
+      }
+    });
+});

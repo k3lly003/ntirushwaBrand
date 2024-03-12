@@ -73,6 +73,7 @@ fetch(`https://ntirushwabrand-bn-2.onrender.com/api/blogs/${blogId}`)
           .then((res) => res.json())
           .then((data) => {
             console.log(data);
+            window.location.href = "/blogs.html";
           })
           .catch((error) => {
             console.log("THIS IS THE ERROR", error);
@@ -80,6 +81,5 @@ fetch(`https://ntirushwabrand-bn-2.onrender.com/api/blogs/${blogId}`)
       } catch (err) {
         console.log(err);
       }
-      // Window.location.reload();
     });
   });

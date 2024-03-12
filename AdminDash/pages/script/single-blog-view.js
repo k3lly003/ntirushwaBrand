@@ -22,20 +22,22 @@ fetch(`https://ntirushwabrand-bn-2.onrender.com/api/blogs/${blogId}`)
     document.getElementById("over-text").innerText = data.content;
     document.getElementById("date").innerText = formattedDate;
     document.getElementById("image").setAttribute("src", data.image);
-    document.getElementById("userName").innerText =
-      data.comments[0].author.first_name;
+    // document.getElementById("userName").innerText =
+    // data.comments[0].author.first_name;
     //displaying all comments
+    console.log("THIS IS THE COMMENTS", data.comment);
+    let commentList = "";
     data.comments.forEach((comment) => {
+      console.log("FOREACH COMMENT", comment);
       const commentElement = document.createElement("div");
       commentElement.classList.add("comment");
-      commentElement.innerHTML = `
-          <p class="author">${comment.author.first_name}</p>
-          <p class="message">${comment.message}</p>
-        `;
-      commentsContainer.appendChild(commentElement);
+      commentList += `<div class="personal-comment">
+      <h3 id="userName">${comment.author.first_name}</h3>
+      <p id="userIdea">${comment.message}</p>
+    </div>`;
     });
     document.getElementById("comments").innerText = data.comments.length;
-    console.log("FETCHED DATA AT LINE 29", data);
+    document.getElementById("commentContent").innerHTML = commentList;
     likes = data.likes;
     console.log("THIS IS THE LIKES", likes);
   });
@@ -51,30 +53,24 @@ sendMessageBtn.addEventListener(
     event.preventDefault();
 
     const token = localStorage.getItem("token");
-    console.log("THIS IS THE TOKEN", token);
-    // if (!token) {
-    //   alert("Please log in to add a comment.");
-    //   return false;
-    // }
-    // let message = document.querySelector(".child").value;
-    // if (!message) return alert("Please fill out your message!");
-    // else {
     const data = {
       message: messageInput.value,
     };
     console.log("THIS IS THE MESSAGE INPUT VALUE", data);
-    fetch(`https://ntirushwabrand-bn-2.onrender.com/blog/${blogId}/comment`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: `Bearer ${token}`,
-      },
-      body: data,
-    })
+    fetch(
+      `https://ntirushwabrand-bn-2.onrender.com/api/blog/${blogId}/comment`,
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${token}`,
+        },
+        body: JSON.stringify(data),
+      }
+    )
       .then((res) => res.json())
       .then((data) => {
-        console.log("IS THIS INPUT DATA OR FETCHED ONES ?", data);
-        // window.location.reload();
+        location.reload();
       })
       .catch((err) => console.error(err));
   }
@@ -98,7 +94,7 @@ addLike.addEventListener("click", () => {
   })
     .then((resp) => resp.json())
     .then((data) => {
-      console.log(data);
+      Window.location.reload();
     })
     .catch((error) => {
       console.log(error);

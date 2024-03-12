@@ -24,7 +24,16 @@ fetch(`https://ntirushwabrand-bn-2.onrender.com/api/blogs/${blogId}`)
     document.getElementById("image").setAttribute("src", data.image);
     document.getElementById("userName").innerText =
       data.comments[0].author.first_name;
-    document.getElementById("userIdea").innerText = data.comments[0].message;
+    //displaying all comments
+    data.comments.forEach((comment) => {
+      const commentElement = document.createElement("div");
+      commentElement.classList.add("comment");
+      commentElement.innerHTML = `
+          <p class="author">${comment.author.first_name}</p>
+          <p class="message">${comment.message}</p>
+        `;
+      commentsContainer.appendChild(commentElement);
+    });
     document.getElementById("comments").innerText = data.comments.length;
     console.log("FETCHED DATA AT LINE 29", data);
     likes = data.likes;

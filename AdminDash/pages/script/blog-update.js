@@ -67,7 +67,7 @@ fetch(`https://ntirushwabrand-bn-2.onrender.com/api/blogs/${blogId}`)
           {
             method: "PATCH",
             headers: header,
-            body: newData,
+            body: JSON.stringify(newData),
           }
         )
           .then((res) => res.json())

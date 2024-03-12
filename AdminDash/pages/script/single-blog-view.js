@@ -90,7 +90,7 @@ addLike.addEventListener("click", () => {
     alert("Please Log In To Like This Blog Post.");
     console.log("Please Log In To Like This Blog Post.");
   }
-  fetch(`https://ntirushwabrand-bn-2.onrender.com/blogs/${blogId}/like`, {
+  fetch(`https://ntirushwabrand-bn-2.onrender.com/api/blogs/${blogId}/like`, {
     method: "PATCH",
     headers: {
       Authorization: "Bearer " + token,

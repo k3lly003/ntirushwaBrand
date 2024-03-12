@@ -92,11 +92,7 @@ h3 {
 #image {
   /* border: 1px solid green; */
   height: 13em;
-  width: 50%;
-}
-#user_portrait {
-  border-radius: 5px;
-  float: right;
+  width: 60%;
 }
 #over-text {
   /* border: 1px solid red; */
@@ -110,15 +106,13 @@ h3 {
   border-radius: 5px;
   color: #ffffff;
   display: flex;
-  height: 5em;
+  height: 2em;
   justify-content: space-evenly;
   align-items: center;
 }
 .display-input {
   /* border: 2px solid green; */
-  border-radius: 5px;
-  padding-top: 5%;
-  /* background-color: #443f3fb7; */
+  border-radius: 2px;
   display: flex;
   flex-direction: column;
   width: 80%;
@@ -126,34 +120,43 @@ h3 {
 #display {
   /* border: 1px solid red; */
   display: flex;
-  gap: 2px;
+  gap: 0.5em;
   font-size: 1.3em;
   cursor: pointer;
 }
-.display {
+.userComment {
+  /* border: 1px solid brown; */
   display: flex;
-  gap: 2px;
+  flex-direction: column;
+  gap: 2em;
+}
+.display {
+  /* border: 1px solid green; */
+  display: flex;
+  gap: 0.5em;
   font-size: 1.3em;
+  cursor: pointer;
 }
 .but-in {
-  /* border: 1px solid red; */
-  display: flex;
+  /* border: 1px solid rgb(0, 0, 255); */
   width: 80%;
 }
-.but-in button {
-  border: 2px solid #a6a001;
+button {
+  border: 2px solid #27a601;
   border-radius: 5px;
-  height: 30px;
+  padding: 10px;
   width: 10%;
   font-size: 1em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .child {
-  /* border: 1px solid rgb(31, 199, 40); */
   border: 1px solid rgb(112, 107, 107);
   background-color: rgb(255, 255, 255);
   padding-bottom: 10%;
   width: 80%;
-  margin: 0% 0% 0% 0%;
+  color: #000000;
 }
 .no {
   /* border: 1px solid rgb(0, 0, 0); */
@@ -171,44 +174,22 @@ h3 {
   /* color: rgb(255, 14, 14); */
 }
 .feedbacks {
+  border-top: 2px solid rgb(0, 0, 0);
   /* border: 1px solid red; */
-  background-color: #fff;
-}
-.comments {
-  /* border: 1px solid green; */
-  margin: 2%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   gap: 2em;
+  background-color: #ffffff;
 }
 .personal-comment {
-  border-radius: 5px;
-  width: 50%;
+  /* border: 1px solid red; */
+  border-radius: 2px;
+  width: 80%;
   background-color: #d7d7d7;
 }
-.coment-coment {
-  border-top: 1px solid rgb(0, 0, 0);
-  /* border-radius: 2px; */
-  display: flex;
-  justify-content: space-evenly;
-  padding: -2px 0;
-  /* height: 2em; */
-}
-.coment-coment h3,
 p {
   /* border: 1px solid yellow; */
   margin: 0;
-}
-.feed {
-  border-top: 1px solid rgb(255, 255, 255);
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-}
-.read-more {
-  /* border: 1px solid red; */
-  width: 50%;
 }
 .dropdown {
   display: none;

@@ -82,17 +82,41 @@ function validateMessage() {
   } else {
     errThree.innerHTML = "";
   }
-  window.location.href = "./index.html#contact";
+  // window.location.href = "./index.html#contact";
 }
-function validateForm() {
-  var isValidName = validateName();
-  var isValidEmail = validateEmail();
-  var isValidMessage = validateMessage();
-  var handle;
+//CREATING A MESAGE
 
-  return isValidName && isValidEmail && isValidMessage;
-}
-fetch(`http://localhost:8000/api/blogs`)
+document
+  .getElementById("addMessage")
+  .addEventListener("submit", function (event) {
+    event.preventDefault();
+    const userName = document.getElementById("name").value;
+    const email = document.getElementById("email").value;
+    const message = document.getElementById("message").value;
+
+    const obj = {
+      name: userName,
+      email: email,
+      text: message,
+    };
+    fetch(`https://ntirushwabrand-bn-2.onrender.com/api/messages`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(obj),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        alert("MESSAGE SENT!");
+        console.log(data);
+        window.location.reload();
+
+        // document.getElementById("title").addEventListener("input", validateTitle);
+      });
+  });
+//END OF CREATING A MESSAGE
+fetch(`https://ntirushwabrand-bn-2.onrender.com/api/blogs`)
   .then((res) => {
     return res.json();
   })
@@ -129,18 +153,14 @@ function renderBlogs(data) {
     <div class="feed">
       <div class="like">
         <i class="fa fa-thumbs-o-up" aria-hidden="true"></i>
-        <p>27</p>
+        <p>${blogList[i].likes.length}</p>
       </div>
      <div class="come">
         <i class="fa fa-comment-o" aria-hidden="true"></i>
-        <p>11</p>
+        <p>${blogList[i].comments.length}</p>
        </div>
      </div>
    </div>`;
     blogContainer.insertAdjacentHTML("beforeend", card);
   }
-}
-function showSingleBlog(id) {
-  localStorage.setItem("currentId", id);
-  window.location.href = "./single-blog-view.html";
 }

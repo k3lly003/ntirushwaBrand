@@ -11,41 +11,75 @@ var quill = new Quill("#editor", {
 });
 document.getElementById("editor").addEventListener("input", function () {
   const content = quill.root.innerHTML;
-  // validateEditor(content);
 });
 const searchParams = new URLSearchParams(window.location.search);
 const blogId = searchParams.get("id");
+console.log(blogId);
 let data = [];
 let blogList = [];
-data = localStorage.getItem("blogs");
-blogList = JSON.parse(data);
 console.log(blogList[blogId]);
-document.getElementById("title").value = blogList[blogId].title;
-document.getElementById("date").value = blogList[blogId].date;
-document.getElementById("description").value = blogList[blogId].description;
-quill.root.innerHTML = blogList[blogId].content;
-const form = document.getElementById("postForm");
-form.addEventListener("submit", (e) => {
-  e.preventDefault();
-  // const formData = new formData(e.target);
-  // const Title = formData.get("title");
-  let title = document.getElementById("title").value;
-  let date = document.getElementById("date").value;
-  let description = document.getElementById("description").value;
-  let content = quill.root.innerHTML;
-  // console.log(title);
-  // console.log(date);
-  // console.log(content);
-  const fileReader = new FileReader();
-  fileReader.addEventListener("load", () => {
-    const imgUrl = fileReader.result;
-    blogList[blogId].content = content;
-    blogList[blogId].date = date;
-    blogList[blogId].title = title;
-    blogList[blogId].image = imgUrl;
-    blogList[blogId].description = description;
-    localStorage.setItem("blogs", JSON.stringify(blogList));
-    window.location.href = "./blogs.html";
+
+//UPDATE
+fetch(`https://ntirushwabrand-bn-2.onrender.com/api/blogs/${blogId}`)
+  .then((res) => {
+    return res.json();
+  })
+  .then((data) => {
+    console.log(data);
+    //FORMATING THE DATE
+    const date = new Date(data.createdAt);
+    const year = date.getFullYear();
+    const month = date.getMonth() + 1;
+    const day = date.getDate();
+    const formattedDate = `${year}-${month < 10 ? "0" : ""}${month}-${
+      day < 10 ? "0" : ""
+    }${day}`;
+    //DISPALYING THE BLOG ON THE PAGE
+    document.getElementById("title").value = data.title;
+    document.getElementById("description").value = data.description;
+    document.getElementById("date").value = formattedDate;
+    console.log("ssssssssssssssssss", data.content);
+    quill.root.innerHTML = data.content;
+    document.getElementById("image").setAttribute("src", data.image);
+    let updateSingleBlog = document.getElementById("updateSingleBlog");
+    updateSingleBlog.addEventListener("click", async (e) => {
+      e.preventDefault();
+      let tkn = localStorage.getItem("token");
+      console.log(tkn, "is this token");
+      const header = {
+        Authorization: "Bearer " + tkn,
+        "Content-Type": "application/json",
+      };
+      const title = document.getElementById("title").value;
+      const image = document.getElementById("image").files[0];
+      const content = quill.root.innerHTML;
+      const description = document.getElementById("description").value;
+      const newData = {
+        title: title,
+        content: content,
+        description: description,
+      };
+
+      try {
+        console.log(newData);
+        await fetch(
+          `https://ntirushwabrand-bn-2.onrender.com/api/blogs/${blogId}`,
+          {
+            method: "PATCH",
+            headers: header,
+            body: newData,
+          }
+        )
+          .then((res) => res.json())
+          .then((data) => {
+            console.log(data);
+          })
+          .catch((error) => {
+            console.log("THIS IS THE ERROR", error);
+          });
+      } catch (err) {
+        console.log(err);
+      }
+      // Window.location.reload();
+    });
   });
-  fileReader.readAsDataURL(document.querySelector("input[type=file]").files[0]);
-});

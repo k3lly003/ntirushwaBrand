@@ -22,9 +22,6 @@ fetch(`https://ntirushwabrand-bn-2.onrender.com/api/blogs/${blogId}`)
     document.getElementById("over-text").innerText = data.content;
     document.getElementById("date").innerText = formattedDate;
     document.getElementById("image").setAttribute("src", data.image);
-    // document.getElementById("userName").innerText =
-    // data.comments[0].author.first_name;
-    //displaying all comments
     console.log("THIS IS THE COMMENTS", data.comment);
     let commentList = "";
     data.comments.forEach((comment) => {
@@ -47,6 +44,21 @@ let messageInput = document.getElementById("child");
 let container = document.getElementById("display");
 let sendMessageBtn = document.getElementById("addComment");
 
+function validateComment() {
+  var imageInput = document.getElementById("child").value;
+  var commentError = document.getElementById("errMsg");
+
+  if (imageInput.trim() === "") {
+    commentError.style.color = "red";
+    commentError.innerHTML =
+      "You input field is empty! Please write something.";
+    return false;
+  } else {
+    commentError.innerHTML = "";
+    return true;
+  }
+}
+
 sendMessageBtn.addEventListener(
   "click",
   (event) => {
@@ -56,7 +68,6 @@ sendMessageBtn.addEventListener(
     const data = {
       message: messageInput.value,
     };
-    console.log("THIS IS THE MESSAGE INPUT VALUE", data);
     fetch(
       `https://ntirushwabrand-bn-2.onrender.com/api/blog/${blogId}/comment`,
       {
@@ -70,7 +81,11 @@ sendMessageBtn.addEventListener(
     )
       .then((res) => res.json())
       .then((data) => {
-        location.reload();
+        if (!validateComment()) {
+          return validateComment();
+        } else {
+          window.location.reload();
+        }
       })
       .catch((err) => console.error(err));
   }
@@ -94,7 +109,7 @@ addLike.addEventListener("click", () => {
   })
     .then((resp) => resp.json())
     .then((data) => {
-      Window.location.reload();
+      window.location.reload();
     })
     .catch((error) => {
       console.log(error);

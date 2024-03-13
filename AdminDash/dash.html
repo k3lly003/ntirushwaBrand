@@ -82,7 +82,7 @@
             <i class="fa fa-cogs" aria-hidden="true" id="icon"></i>
           </div>
           <div class="h3">
-            <h3>Total Blogs <span id="totalBlogs">4</span></h3>
+            <h3>Total Blogs <span id="totalBlogs"></span></h3>
           </div>
           <a href="./pages/blogs.html">
             <div class="bellow-card">
@@ -235,13 +235,10 @@
     return res.json();
   })
   .then((data) => {
-
+    let numberOfBlogs= document.getElementById("totalBlogs");
+    numberOfBlogs.textContent = data.length;
     console.log("DATA LENGTH IS",data.length);
   });
-
-          let numberOfBlogs= document.getElementById("totalBlogs");
-          
-          numberOfBlogs.innerHTML = data.length;
         </script>
   </body>
 </html>

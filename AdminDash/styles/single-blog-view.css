@@ -115,6 +115,7 @@ h3 {
   border-radius: 2px;
   display: flex;
   flex-direction: column;
+  gap: 20px;
   width: 80%;
 }
 #display {
@@ -141,6 +142,7 @@ h3 {
   /* border: 1px solid rgb(0, 0, 255); */
   width: 80%;
 }
+
 button {
   border: 2px solid #27a601;
   border-radius: 5px;
@@ -151,11 +153,11 @@ button {
   justify-content: center;
   align-items: center;
 }
-.child {
-  border: 1px solid rgb(112, 107, 107);
+#child {
+  border: 1px solid rgb(178, 178, 178);
   background-color: rgb(255, 255, 255);
   padding-bottom: 10%;
-  width: 80%;
+  width: 50%;
   color: #000000;
 }
 .no {
@@ -170,9 +172,6 @@ button {
   font-size: 25px;
   cursor: pointer;
 }
-.no:hover {
-  /* color: rgb(255, 14, 14); */
-}
 .feedbacks {
   border-top: 2px solid rgb(0, 0, 0);
   /* border: 1px solid red; */
@@ -185,7 +184,7 @@ button {
   /* border: 1px solid red; */
   border-radius: 2px;
   width: 80%;
-  background-color: #d7d7d7;
+  background-color: #e9e9e9;
 }
 p {
   /* border: 1px solid yellow; */

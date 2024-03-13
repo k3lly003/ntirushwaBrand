@@ -61,7 +61,6 @@ fetch(`https://ntirushwabrand-bn-2.onrender.com/api/blogs/${blogId}`)
       };
 
       try {
-        console.log(newData);
         await fetch(
           `https://ntirushwabrand-bn-2.onrender.com/api/blogs/${blogId}`,
           {
@@ -73,7 +72,8 @@ fetch(`https://ntirushwabrand-bn-2.onrender.com/api/blogs/${blogId}`)
           .then((res) => res.json())
           .then((data) => {
             console.log(data);
-            window.location.href = "/blogs.html";
+            window.location.href =
+              "http://192.168.1.129:5501/ntirushwaBrand/AdminDash/pages/blogs.html";
           })
           .catch((error) => {
             console.log("THIS IS THE ERROR", error);

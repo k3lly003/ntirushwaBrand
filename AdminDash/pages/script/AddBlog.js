@@ -10,6 +10,57 @@ var quill = new Quill("#editor", {
     ],
   },
 });
+function validateTitle() {
+  var titleInput = document.getElementById("title").value;
+  var errTwo = document.getElementById("error-two");
+
+  if (titleInput.trim() === "") {
+    errTwo.style.color = "red";
+    errTwo.innerHTML = "Title cannot be empty";
+    return false;
+  } else {
+    errTwo.innerHTML = "";
+  }
+}
+function validateDescription() {
+  var descriptionInput = document.getElementById("description").value;
+  var errFour = document.getElementById("error-four");
+
+  if (descriptionInput.trim() === "") {
+    errFour.style.color = "red";
+    errFour.innerHTML = "You have to add a descrition";
+    return false;
+  } else {
+    errFour.innerHTML = "";
+    return true;
+  }
+}
+function validateImage() {
+  var imageInput = document.getElementById("image").value;
+  var errThree = document.getElementById("error-three");
+
+  if (imageInput.trim() === "") {
+    errThree.style.color = "red";
+    errThree.innerHTML = "You have to add an image";
+    return false;
+  } else {
+    errThree.innerHTML = "";
+    return true;
+  }
+}
+function validateContent() {
+  var contentInput = quill.root.innerHTML.value;
+  var errFive = document.getElementById("error-five");
+
+  if (contentInput.trim() === "") {
+    errFive.style.color = "red";
+    errFive.innerHTML = "You have to fill the blog input";
+    return false;
+  } else {
+    errFive.innerHTML = "";
+    return true;
+  }
+}
 document
   .getElementById("postForm")
   .addEventListener("submit", async function (event) {
@@ -29,7 +80,6 @@ document
     console.log(tkn, "is this token");
     const header = {
       Authorization: "Bearer " + tkn,
-      // "Content-Type": "application/json",
     };
 
     try {
@@ -40,38 +90,27 @@ document
       })
         .then((res) => res.json())
         .then((data) => {
-          console.log(data);
+          if (
+            !validateImage() &&
+            !validateTitle() &&
+            !validateDescription() &&
+            !validateContent()
+          ) {
+            return (
+              validateImage() &&
+              validateTitle() &&
+              validateContent() &&
+              validateDescription()
+            );
+          } else {
+            window.location.href =
+              "http://192.168.1.129:5501/ntirushwaBrand/AdminDash/pages/blogs.html";
+          }
         })
         .catch((error) => {
           console.log("THIS IS THE ERROR", error);
         });
     } catch (err) {
       console.log(err);
-    }
-
-    function validateTitle() {
-      var titleInput = document.getElementById("title").value;
-      var errTwo = document.getElementById("error-two");
-
-      if (titleInput.trim() === "") {
-        errTwo.style.color = "red";
-        errTwo.innerHTML = "Title cannot be empty";
-        return false;
-      } else {
-        errTwo.innerHTML = "";
-      }
-    }
-    function validateImage() {
-      var imageInput = document.getElementById("image").value;
-      var errThree = document.getElementById("error-three");
-
-      if (imageInput.trim() === "") {
-        errThree.style.color = "red";
-        errThree.innerHTML = "You have to add an image";
-        return false;
-      } else {
-        errThree.innerHTML = "";
-        return true;
-      }
     }
   });

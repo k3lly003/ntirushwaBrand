@@ -86,6 +86,8 @@ a {
   display: flex;
   justify-content: space-evenly;
   flex-wrap: wrap;
+  max-width: 86rem;
+  margin: 0 auto;
 }
 .me-description {
   /* border: 1px solid red; */
@@ -169,6 +171,8 @@ a {
   justify-content: center;
   align-items: center;
   margin-top: 4%;
+  max-width: 86rem;
+  margin: 0 auto;
 }
 .about {
   /* border: 1px solid rgb(255, 255, 255); */
@@ -364,6 +368,8 @@ a {
   flex-direction: column;
   align-items: center;
   gap: 12px;
+  max-width: 86rem;
+  margin: 0 auto;
 }
 .firstbox-cont {
   /* border: 2px solid blue; */
@@ -389,7 +395,7 @@ a {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  width: 30em;
+  width: 35em;
   height: 15em;
   border-radius: 15px;
   opacity: 0.8;
@@ -431,7 +437,7 @@ a {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  width: 30em;
+  width: 35em;
   height: 15em;
   border-radius: 15px;
   opacity: 0.8;
@@ -533,7 +539,10 @@ a {
   /* border: 1px solid red; */
   width: 60%;
   overflow: hidden;
-  height: 28em;
+  height: 20em;
+  margin-top: 5rem;
+  max-width: 86rem;
+  margin: 0 auto;
 }
 
 .blog-container :hover .blogs {
@@ -548,9 +557,7 @@ a {
 }
 .child {
   /* border: 5px solid green; */
-  height: 15em;
-  width: 20%;
-  margin-bottom: 2em;
+  width: 30rem;
 }
 .blog-img {
   /* border: 2px solid red; */
@@ -593,11 +600,12 @@ a {
 /* Contact section's css */
 .section6 {
   /* border: 1px solid blue; */
-  margin-top: 5em;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  max-width: 86rem;
+  margin: 0 auto;
 }
 .contact-header {
   /* border: 1px solid red; */

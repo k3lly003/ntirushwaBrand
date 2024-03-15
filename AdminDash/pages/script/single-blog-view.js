@@ -8,7 +8,7 @@ fetch(`https://ntirushwabrand-bn-2.onrender.com/api/blogs/${blogId}`)
   })
   .then((data) => {
     console.log(data);
-    document.getElementById("displayLikes").innerText = data.likes.length;
+    document.getElementById("displayLikes").innerHTML = data.likes.length;
     //FORMATING THE DATE
     const date = new Date(data.createdAt);
     const year = date.getFullYear();
@@ -18,9 +18,9 @@ fetch(`https://ntirushwabrand-bn-2.onrender.com/api/blogs/${blogId}`)
       day < 10 ? "0" : ""
     }${day}`;
     //DISPALYING THE BLOG ON THE PAGE
-    document.getElementById("title").innerText = data.title;
-    document.getElementById("over-text").innerText = data.content;
-    document.getElementById("date").innerText = formattedDate;
+    document.getElementById("title").innerHTML = data.title;
+    document.getElementById("over-text").innerHTML = data.content;
+    document.getElementById("date").innerHTML = formattedDate;
     document.getElementById("image").setAttribute("src", data.image);
     console.log("THIS IS THE COMMENTS", data.comment);
     let commentList = "";
@@ -33,7 +33,7 @@ fetch(`https://ntirushwabrand-bn-2.onrender.com/api/blogs/${blogId}`)
       <p id="userIdea">${comment.message}</p>
     </div>`;
     });
-    document.getElementById("comments").innerText = data.comments.length;
+    document.getElementById("comments").innerHTML = data.comments.length;
     document.getElementById("commentContent").innerHTML = commentList;
     likes = data.likes;
     console.log("THIS IS THE LIKES", likes);

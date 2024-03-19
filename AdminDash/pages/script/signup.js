@@ -119,10 +119,11 @@ signupForm.addEventListener("submit", (e) => {
         }).showToast();
       }
       setTimeout(() => {
-        if (data.user.userType == "admin") {
-          window.location.href = "/ntirushwaBrand/AdminDash/dash.html";
-        } else {
+        if (data.user.userType === "user") {
+          console.log("THIS IS THE USER TYPE", data.user.userType);
           window.location.href = "/ntirushwaBrand/index.html";
+        } else {
+          window.location.href = "/ntirushwaBrand/AdminDash/dash.html";
         }
       }, 1000);
     });

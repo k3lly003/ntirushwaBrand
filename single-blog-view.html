@@ -61,40 +61,37 @@
     </section>
     <div class="blog-view">
       <div class="scroll">
-        <div class="blog-heading">
-          <h3 id="title"></h3>
-          <p id="date"></p>
-        </div>
-        <div class="container">
-          <img id = "image"
-          />
-          <p id="over-text">
-          </p>
-        </div>
+        <div id='view-content'><ViewBlog/></div>
         <div class="feedbacks">
-          <div class="like-come">
-            <div class="display">
-              <i class="fa fa-thumbs-o-up" aria-hidden="true" id="addLikeOnBlog"></i>
-              <p id="displayLikes">2</p>
-            </div>
+          <div class="like-come"> 
             <div id="display">
-              <i class="fa fa-comment" aria-hidden="true" id="./single-blog-view.html#addCom"></i>
-              <p id="comments"></p>
             </div>
          </div>
          <div class="userComment">
-           <div class="display-input" id="commentContent">
-             
-           </div>
-           <div class="but-in" id="addCom">
-             <textarea placeholder="Add a comment" id="child"></textarea>
-             <p id="errMsg"></p>
-             <button  id="addComment">comment</button>
+           <div class="display-input" id="commentContent">          
            </div>
          </div>
        </div>
     </div>
-    <script src="./AdminDash/pages/script/single-blog-view.js">
+    </div>
+    <script src="./AdminDash/pages/script/single-blog-view.js" type="text/babel">
     </script>
+    <!-- React cdn -->
+  <script
+  crossorigin
+  src="https://unpkg.com/react@18/umd/react.production.min.js"
+></script>
+<script
+  crossorigin
+  src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"
+></script>
+<!-- babel -->
+<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+<script src="./AdminDash//pages/script/comments.js" type="text/babel"></script>
+<script src="./AdminDash//pages/script/likes&dislikes.js" type="text/babel"></script>
+<script
+  src="/ntirushwaBrand/components/SideBar.js"
+  type="text/babel"
+></script>
   </body>
 </html>

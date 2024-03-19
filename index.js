@@ -111,56 +111,5 @@ document
         alert("MESSAGE SENT!");
         console.log(data);
         window.location.reload();
-
-        // document.getElementById("title").addEventListener("input", validateTitle);
       });
   });
-//END OF CREATING A MESSAGE
-fetch(`https://ntirushwabrand-bn-2.onrender.com/api/blogs`)
-  .then((res) => {
-    return res.json();
-  })
-  .then((data) => {
-    renderBlogs(data);
-    console.log(data);
-  });
-
-/*Blog rendering*/
-
-let blogList = [];
-const blogContainer = document.querySelector(".blogs");
-// renderBlogs();
-function renderBlogs(data) {
-  blogList = data;
-  // console.log(blogList);
-  for (let i = 0; i < blogList.length; i++) {
-    let card = ` <div class="child">
-    <div class="blog-img">
-      <img src="${blogList[i].image}" alt="">
-    </div>
-    <a href="./single-blog-view.html?id=${blogList[i]._id}">
-      <div>
-       <div class="up">
-         <p>${blogList[i].title}</p>
-       </div>
-       <div class="low">
-         <p>
-          ${blogList[i].description}
-         </p>
-       </div>
-     </div>
-    </a>
-    <div class="feed">
-      <div class="like">
-        <i class="fa fa-thumbs-o-up" aria-hidden="true"></i>
-        <p>${blogList[i].likes.length}</p>
-      </div>
-     <div class="come">
-        <i class="fa fa-comment-o" aria-hidden="true"></i>
-        <p>${blogList[i].comments.length}</p>
-       </div>
-     </div>
-   </div>`;
-    blogContainer.insertAdjacentHTML("beforeend", card);
-  }
-}

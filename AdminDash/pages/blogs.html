@@ -24,12 +24,12 @@
     referrerpolicy="no-referrer"
   />
   <link
-  rel="stylesheet"
-  type="text/css"
-  href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css"
-/>
+    rel="stylesheet"
+    type="text/css"
+    href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min?.css"
+  />
   <link rel="stylesheet" href="../styles/blogs.css" />
-  
+
   <body>
     <div class="sidebar">
       <a href="../dash.html">
@@ -39,61 +39,54 @@
         </div>
       </a>
       <a href="./notifications.html">
-       <div class="logo-cont">
+        <div class="logo-cont">
           <h2>notification</h2>
           <img src="/assets/notification.png" alt="" class="logo" />
-       </div>
+        </div>
       </a>
       <a href="./profile.html">
-       <div class="logo-cont">
+        <div class="logo-cont">
           <h2>profile</h2>
           <img src="/assets/profile.png" alt="" class="logo" />
-       </div>
+        </div>
       </a>
       <a href="./blogs.html">
-       <div class="logo-cont">
+        <div class="logo-cont">
           <h2>blogs</h2>
           <img src="/assets/blog.png" alt="" class="logo" />
-       </div>
+        </div>
       </a>
       <a href="./themes.html">
-       <div class="logo-cont">
-          <h2>theme</h2>
+        <div class="logo-cont">
+          <h2>themes</h2>
           <img src="/assets/theme.png" alt="" class="logo" />
-       </div>
+        </div>
       </a>
       <div class="account">
         <img src="" alt="" />
         <button>Logout</button>
       </div>
     </div>
-    <div class="dropdown">
-      <i class="fa fa-bars" aria-hidden="true" class="dropbtn"></i>
-      <div class="dropdown-content">
-        <a href="../dash.html"><p>Dashboard</p></a>
-        <a href="./notifications.html"><p>Notification</p></a>
-        <a href="./profile.html"><p>Profile</p></a>
-        <a href="./blogs.html"><p>Blogs</p></a>
-        <a href="./themes.html"><p>Settings</p></a>
-        <a href=""><button>logout</button></a>
-      </div>
-    </div>
-    <div class="blog-body-cont">
-      <div class="blog-heading">
-        <h2>Blogs</h2>
-        <a href="./AddBlog.html">
-          <div class="add-blog">
-            <i class="fa fa-plus" aria-hidden="true"></i>
-            <p>Add a blog</p>
-          </div>
-        </a>
-      </div>
-      <div class="blog-view" id="blog-container">
-      </div>
+    <div><Blogs /></div>
   </body>
   <script
-  type="text/javascript"
-  src="https://cdn.jsdelivr.net/npm/toastify-js"
-></script>
-  <script src="./script/blog.js"></script>
+    type="text/javascript"
+    src="https://cdn.jsdelivr.net/npm/toastify-js"
+  ></script>
+  <!-- React cdn -->
+  <script
+    crossorigin
+    src="https://unpkg.com/react@18/umd/react.production.min.js"
+  ></script>
+  <script
+    crossorigin
+    src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"
+  ></script>
+  <!-- babel -->
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <script src="./script/blog.js" type="text/babel"></script>
+  <script
+    src="/ntirushwaBrand/components/SideBar.js"
+    type="text/babel"
+  ></script>
 </html>

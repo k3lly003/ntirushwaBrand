@@ -1,117 +1,52 @@
-/*singleBlog*/
-const searchParams = new URLSearchParams(window.location.search);
-const blogId = searchParams.get("id");
+const { useState, useEffect } = React;
 
-fetch(`https://ntirushwabrand-bn-2.onrender.com/api/blogs/${blogId}`)
-  .then((res) => {
-    return res.json();
-  })
-  .then((data) => {
-    console.log(data);
-    document.getElementById("displayLikes").innerHTML = data.likes.length;
-    //FORMATING THE DATE
-    const date = new Date(data.createdAt);
-    const year = date.getFullYear();
-    const month = date.getMonth() + 1;
-    const day = date.getDate();
-    const formattedDate = `${year}-${month < 10 ? "0" : ""}${month}-${
-      day < 10 ? "0" : ""
-    }${day}`;
-    //DISPALYING THE BLOG ON THE PAGE
-    document.getElementById("title").innerHTML = data.title;
-    document.getElementById("over-text").innerHTML = data.content;
-    document.getElementById("date").innerHTML = formattedDate;
-    document.getElementById("image").setAttribute("src", data.image);
-    console.log("THIS IS THE COMMENTS", data.comment);
-    let commentList = "";
-    data.comments.forEach((comment) => {
-      console.log("FOREACH COMMENT", comment);
-      const commentElement = document.createElement("div");
-      commentElement.classList.add("comment");
-      commentList += `<div class="personal-comment">
-      <h3 id="userName">${comment.author.first_name}</h3>
-      <p id="userIdea">${comment.message}</p>
-    </div>`;
-    });
-    document.getElementById("comments").innerHTML = data.comments.length;
-    document.getElementById("commentContent").innerHTML = commentList;
-    likes = data.likes;
-    console.log("THIS IS THE LIKES", likes);
-  });
+function ViewBlog() {
+  const [blog, setBlog] = useState(null);
 
-//CREATING A COMMENT
-let messageInput = document.getElementById("child");
-let container = document.getElementById("display");
-let sendMessageBtn = document.getElementById("addComment");
+  useEffect(() => {
+    const searchParams = new URLSearchParams(window.location.search);
+    const blogId = searchParams.get("id");
 
-function validateComment() {
-  var imageInput = document.getElementById("child").value;
-  var commentError = document.getElementById("errMsg");
+    const fetchBlogContent = async () => {
+      try {
+        const response = await fetch(
+          `https://ntirushwabrand-bn-2.onrender.com/api/blogs/${blogId}`
+        );
+        if (!response.ok) {
+          throw new Error(`API request failed with status ${response.status}`);
+        }
+        const data = await response.json();
+        setBlog(data);
+      } catch (error) {
+        console.error("Error fetching blog:", error);
+      }
+    };
 
-  if (imageInput.trim() === "") {
-    commentError.style.color = "red";
-    commentError.innerHTML =
-      "You input field is empty! Please write something.";
-    return false;
-  } else {
-    commentError.innerHTML = "";
-    return true;
+    fetchBlogContent();
+  }, []);
+
+  if (!blog) {
+    return <p>Loading Blog</p>;
   }
+
+  return (
+    <>
+      <div className="blog-heading">
+        <h3 id="title">{blog.title}</h3>
+        <p id="date">{new Date(blog.createdAt).toLocaleDateString()}</p>
+      </div>
+      <div className="container">
+        <img src={blog.image} alt={blog.title} />
+        <p id="over-text">{blog.content}</p>
+      </div>
+      <div className="display-input" id="commentContent">
+        <div className="comments-list"></div>
+      </div>
+    </>
+  );
 }
 
-sendMessageBtn.addEventListener(
-  "click",
-  (event) => {
-    event.preventDefault();
-
-    const token = localStorage.getItem("token");
-    const data = {
-      message: messageInput.value,
-    };
-    fetch(
-      `https://ntirushwabrand-bn-2.onrender.com/api/blog/${blogId}/comment`,
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: `Bearer ${token}`,
-        },
-        body: JSON.stringify(data),
-      }
-    )
-      .then((res) => res.json())
-      .then((data) => {
-        if (!validateComment()) {
-          return validateComment();
-        } else {
-          window.location.reload();
-        }
-      })
-      .catch((err) => console.error(err));
-  }
-  // }
+ReactDOM.render(
+  React.createElement(ViewBlog, null),
+  document.getElementById("view-content")
 );
-
-//CREATING LIKE & DISLIKE
-let addLike = document.getElementById("addLikeOnBlog");
-let displayLikes = document.getElementById("displayLikes");
-addLike.addEventListener("click", () => {
-  const token = localStorage.getItem("token");
-  if (!token) {
-    alert("Please Log In To Like This Blog Post.");
-    console.log("Please Log In To Like This Blog Post.");
-  }
-  fetch(`https://ntirushwabrand-bn-2.onrender.com/api/blogs/${blogId}/like`, {
-    method: "PATCH",
-    headers: {
-      Authorization: "Bearer " + token,
-    },
-  })
-    .then((resp) => resp.json())
-    .then((data) => {
-      window.location.reload();
-    })
-    .catch((error) => {
-      console.log(error);
-    });
-});

@@ -104,10 +104,6 @@ h3 {
 .blog-one:hover {
   box-shadow: 10px 15px 15px 0px rgba(214, 212, 212, 0.2);
 }
-.blog-img {
-  /* border: 1px solid green; */
-  /* height: 100%; */
-}
 .blog-img img {
   /* border: 1px solid red; */
   width: 100%;

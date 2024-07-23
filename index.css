@@ -403,6 +403,9 @@ a {
   flex-direction: column;
   justify-content: space-between;
 }
+.one h1{
+  color: #a6a001;
+}
 .two {
   /* border: 1px solid rgb(255, 255, 255); */
   background: url(./assets/two.png);
@@ -417,9 +420,12 @@ a {
   flex-direction: column;
   justify-content: space-between;
 }
+.two h1{
+  color: #a6a001;
+}
 .three {
   /* border: 1px solid red; */
-  background: url(./assets/three.png);
+  background: url(./assets/three.jpg);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -430,6 +436,9 @@ a {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+}
+.three h1{
+  color: #a6a001;
 }
 .four {
   /* border: 1px solid red; */
@@ -445,6 +454,9 @@ a {
   flex-direction: column;
   justify-content: space-between;
 }
+.four h1{
+  color: #a6a001;
+}
 .five {
   /* border: 1px solid red; */
   background: url(./assets/five.png);
@@ -458,6 +470,9 @@ a {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+}
+.five h1{
+  color: #a6a001;
 }
 .six {
   /* border: 1px solid red; */
@@ -473,23 +488,28 @@ a {
   flex-direction: column;
   justify-content: space-between;
 }
+.six h1{
+  color: #a6a001;
+}
 .one-ico {
   /* border: 1px solid yellow; */
   display: flex;
   justify-content: flex-end;
 }
 .one-circle {
-  /* border: 1px solid green; */
   height: 40px;
   width: 40px;
   margin: 5px;
   border-radius: 100%;
-  background-color: #fff;
+  background-color: #ffffff;
   opacity: 0.1;
   transform: rotate(50deg);
   display: flex;
   justify-content: center;
   align-items: center;
+}
+.one-circle:hover{
+  background: #ee0909;
 }
 .rotate {
   height: 3px;
@@ -916,7 +936,6 @@ a {
     flex-direction: column;
   }
   .one {
-    /* border: 1px solid red; */
     background-size: cover;
     width: 100%;
   }

@@ -546,13 +546,14 @@ a {
 }
 
 .blog-container :hover .blogs {
-  animation-play-state: paused;
+  /* animation-play-state: paused; */
 }
 .blogs {
-  /* border: 1px solid green; */
+  border: 1px solid green;
   display: flex;
-  gap: 1.5em;
-  width: 100vw;
+  justify-content: center;
+  /* gap: 1.5em; */
+  /* width: 100vw; */
   /* animation: 6s slide infinite linear; */
 }
 .child {

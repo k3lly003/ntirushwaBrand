@@ -545,11 +545,11 @@ a {
   margin: 0 auto;
 }
 
-.blog-container :hover .blogs {
-  /* animation-play-state: paused; */
-}
+/* .blog-container :hover .blogs {
+  animation-play-state: paused;
+} */
 .blogs {
-  border: 1px solid green;
+  /* border: 1px solid green; */
   display: flex;
   justify-content: center;
   /* gap: 1.5em; */

@@ -553,7 +553,7 @@ a {
   display: flex;
   gap: 1.5em;
   width: 100vw;
-  animation: 4s slide infinite linear;
+  /* animation: 6s slide infinite linear; */
 }
 .child {
   /* border: 5px solid green; */

@@ -12,6 +12,11 @@
     rel="stylesheet"
   />
   <link rel="stylesheet" href="./styles/signup.css" />
+  <link
+    rel="stylesheet"
+    type="text/css"
+    href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css"
+  />
   <body>
     <div class="login-nav">
       <a href="../index.html">
@@ -19,18 +24,18 @@
       </a>
     </div>
     <div class="bodi">
-      <form class="login-form" onsubmit="return validateForm()">
+      <form class="login-form" id="signup">
         <div class="header">
           <h1>SignUp</h1>
         </div>
         <div class="text">
           <label for="name">firstName</label>
-          <input type="text" id="name" />
+          <input type="text" id="firstName" />
           <p id="error-one"></p>
         </div>
         <div class="text">
           <label for="name">secondName</label>
-          <input type="text" id="name" />
+          <input type="text" id="secondName" />
           <p id="error-one"></p>
         </div>
         <div class="text">
@@ -44,7 +49,7 @@
           <p id="error-three"></p>
         </div>
         <div class="button">
-          <button type="submit" class="log-buto">Send</button>
+          <button type="submit" class="log-buto" id="handle">Send</button>
         </div>
         <div class="circle2"></div>
       </form>
@@ -54,6 +59,10 @@
       </div>
     </div>
     <div class="circle3"></div>
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/toastify-js"
+    ></script>
     <script src="./pages/script/signup.js"></script>
   </body>
 </html>

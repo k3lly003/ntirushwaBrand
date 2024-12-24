@@ -1,4 +1,5 @@
 /*text editor validation*/
+
 var quill = new Quill("#editor", {
   theme: "snow",
   modules: {
@@ -9,63 +10,6 @@ var quill = new Quill("#editor", {
     ],
   },
 });
-document.getElementById("editor").addEventListener("input", function () {
-  const content = quill.root.innerHTML;
-  validateEditor(content);
-});
-document
-  .getElementById("postForm")
-  .addEventListener("submit", function (event) {
-    event.preventDefault();
-    var date = document.getElementById("date").value;
-    var title = document.getElementById("title").value;
-    var image = document.getElementById("image").value;
-    var content = quill.root.innerHTML;
-    var description = document.getElementById("description").value;
-    // Retrieve existing data from local storage
-    var existingData = localStorage.getItem("blogs");
-    var existingBlogs = existingData ? JSON.parse(existingData) : [];
-
-    // Add the new blog to the existing blogs
-    const fileReader = new FileReader();
-    fileReader.addEventListener("load", () => {
-      // console.log(fileReader.result);
-      const imgUrl = fileReader.result;
-      var newBlog = {
-        title: title,
-        date: date,
-        image: imgUrl,
-        content: content,
-        description: description,
-      };
-      existingBlogs.push(newBlog);
-
-      // Save the updated blogs array to local storage
-      localStorage.setItem("blogs", JSON.stringify(existingBlogs));
-    });
-    fileReader.readAsDataURL(
-      document.querySelector("input[type=file]").files[0]
-    );
-    document.getElementById("postForm").reset(); // reset the form
-    quill.setText("");
-  });
-
-document.getElementById("date").addEventListener("input", validateDate);
-document.getElementById("title").addEventListener("input", validateTitle);
-
-function validateDate() {
-  var DateInput = document.getElementById("date").value;
-  var errOne = document.getElementById("error-one");
-
-  if (DateInput.trim() === "") {
-    errOne.style.color = "red"; // use style.color to set color
-    errOne.innerHTML = "Date cannot be empty";
-    return false;
-  } else {
-    errOne.innerHTML = "";
-  }
-}
-
 function validateTitle() {
   var titleInput = document.getElementById("title").value;
   var errTwo = document.getElementById("error-two");
@@ -76,6 +20,19 @@ function validateTitle() {
     return false;
   } else {
     errTwo.innerHTML = "";
+  }
+}
+function validateDescription() {
+  var descriptionInput = document.getElementById("description").value;
+  var errFour = document.getElementById("error-four");
+
+  if (descriptionInput.trim() === "") {
+    errFour.style.color = "red";
+    errFour.innerHTML = "You have to add a descrition";
+    return false;
+  } else {
+    errFour.innerHTML = "";
+    return true;
   }
 }
 function validateImage() {
@@ -91,38 +48,69 @@ function validateImage() {
     return true;
   }
 }
+function validateContent() {
+  var contentInput = quill.root.innerHTML.value;
+  var errFive = document.getElementById("error-five");
 
-const textEditor = document.getElementById("editor");
-textEditor.addEventListener("input", function () {
-  const content = quill.root.innerHTML;
-  validateEditor(content);
-  console.log("textEditor output", content);
-});
-
-function validateEditor(content) {
-  var errFour = document.getElementById("error-four");
-
-  if (content.length < 10) {
-    errFour.style.color = "red";
-    errFour.innerHTML = "Blog must be at least 10 characters long.";
+  if (contentInput.trim() === "") {
+    errFive.style.color = "red";
+    errFive.innerHTML = "You have to fill the blog input";
     return false;
   } else {
-    errFour.innerHTML = "";
-  }
-
-  return true;
-}
-
-function validateForm() {
-  var isValidDate = validateDate();
-  var isValidTitle = validateTitle();
-  var isValidImage = validateImage();
-  var content = quill.root.innerHTML;
-  var isValidBlog = validateEditor(content);
-  if (isValidDate && isValidTitle && isValidImage && isValidBlog) {
-    alert("Successfully done!!");
+    errFive.innerHTML = "";
     return true;
-  } else {
-    return false;
   }
 }
+document
+  .getElementById("postForm")
+  .addEventListener("submit", async function (event) {
+    event.preventDefault();
+    const title = document.getElementById("title").value;
+    const image = document.getElementById("image").files[0];
+    const content = quill.root.innerHTML;
+    const description = document.getElementById("description").value;
+    console.log("this is the content", content);
+    const form = new FormData();
+    form.append("title", title);
+    form.append("image", image);
+    form.append("content", content);
+    form.append("description", description);
+
+    let tkn = localStorage.getItem("token");
+    console.log(tkn, "is this token");
+    const header = {
+      Authorization: "Bearer " + tkn,
+    };
+
+    try {
+      await fetch(`https://ntirushwabrand-bn-2.onrender.com/api/blogs`, {
+        method: "POST",
+        headers: header,
+        body: form,
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          if (
+            !validateImage() &&
+            !validateTitle() &&
+            !validateDescription() &&
+            !validateContent()
+          ) {
+            return (
+              validateImage() &&
+              validateTitle() &&
+              validateContent() &&
+              validateDescription()
+            );
+          } else {
+            window.location.href =
+              "http://192.168.1.129:5501/ntirushwaBrand/AdminDash/pages/blogs.html";
+          }
+        })
+        .catch((error) => {
+          console.log("THIS IS THE ERROR", error);
+        });
+    } catch (err) {
+      console.log(err);
+    }
+  });

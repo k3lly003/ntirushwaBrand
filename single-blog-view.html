@@ -62,98 +62,35 @@
     <div class="blog-view">
       <div class="scroll">
         <div class="blog-heading">
-          <h3 id="title">Reasons why Bussiness Needs Agency</h3>
-          <p id="date">12.Nov.2023</p>
+          <h3 id="title"></h3>
+          <p id="date"></p>
         </div>
         <div class="container">
           <img id = "image"
           />
-          d
           <p id="over-text">
           </p>
         </div>
         <div class="feedbacks">
           <div class="like-come">
             <div class="display">
-              <i class="fa fa-thumbs-o-up" aria-hidden="true"></i>
-              <p> 32</p>
+              <i class="fa fa-thumbs-o-up" aria-hidden="true" id="addLikeOnBlog"></i>
+              <p id="displayLikes">2</p>
             </div>
             <div id="display">
-              <i class="fa fa-comment" aria-hidden="true"></i>
-              <p>12</p>
+              <i class="fa fa-comment" aria-hidden="true" id="./single-blog-view.html#addCom"></i>
+              <p id="comments"></p>
             </div>
          </div>
-         <div class="comments">
-          <div class="display-input">
-            <div class="but-in">
-              <h2>Add comment</h2>
-              <textarea type="text" class="child">
-              </textarea>
-              <button>send</button>
-              </div>
-              <span class="no">x</span>
+         <div class="userComment">
+           <div class="display-input" id="commentContent">
+             
            </div>
-           <div class="personal-comment">
-            <h3>Mukunzi</h3>
-            <p>My bussiness went through the same dificulties, now I know ...</p>
-            <div class="coment-coment">
-              <div class="display">
-                <i class="fa fa-thumbs-o-up" aria-hidden="true"></i>
-                <p>2</p>
-              </div>
-              <div class="display">
-                <i class="fa fa-comment-o" aria-hidden="true"></i>
-                <p>1</p>
-              </div>
-            </div>
-          </div>
-          <div class="personal-comment">
-            <h3>Calvin</h3>
-            <p>I liked how you try to compare the life of an engineer with the ...</p>
-            <div class="coment-coment">
-              <div class="display">
-                <i class="fa fa-thumbs-o-up" aria-hidden="true"></i>
-                <p>29</p>
-              </div>
-              <div class="display">
-                <i class="fa fa-comment-o" aria-hidden="true"></i>
-                <p>34</p>
-              </div>
-            </div>
-          </div>
-          <div class="personal-comment">
-            <h3>Mbanda</h3>
-            <p>Well the blog explains it well, having plan B is crusial 🤷🏾‍♂️</p>
-            <div class="coment-coment">
-              <div class="display">
-                <i class="fa fa-thumbs-o-up" aria-hidden="true"></i>
-                <p>4</p>
-              </div>
-              <div class="display">
-                <i class="fa fa-comment-o" aria-hidden="true"></i>
-                <p>0</p>
-              </div>
-            </div>
-          </div>
-          <div class="personal-comment">
-            <h3>Anna Bell</h3>
-            <p>Nice blog, it's worth reading it 🤗</p>
-            <div class="coment-coment">
-              <div class="display">
-                <i class="fa fa-thumbs-o-up" aria-hidden="true"></i>
-                <p>21</p>
-              </div>
-              <div class="display">
-                <i class="fa fa-comment-o" aria-hidden="true"></i>
-                <p>4</p>
-              </div>
-            </div>
-          </div>
-          <div class="read-more">
-            <a href="">
-              <p>Read more...</p>
-            </a>
-          </div>
+           <div class="but-in" id="addCom">
+             <textarea placeholder="Add a comment" id="child"></textarea>
+             <p id="errMsg"></p>
+             <button  id="addComment">comment</button>
+           </div>
          </div>
        </div>
     </div>

@@ -82,7 +82,7 @@
             <i class="fa fa-cogs" aria-hidden="true" id="icon"></i>
           </div>
           <div class="h3">
-            <h3>Total Blogs 4</h3>
+            <h3>Total Blogs <span id="totalBlogs"></span></h3>
           </div>
           <a href="./pages/blogs.html">
             <div class="bellow-card">
@@ -180,7 +180,7 @@
       }});
     </script>
         <script>
-          const aValues = [
+                    const aValues = [
             "Jan",
             "Feb",
             "Marc",
@@ -228,6 +228,17 @@
               },
             },
           });
+        </script>
+        <script>
+          fetch(`https://ntirushwabrand-bn-2.onrender.com/api/blogs`)
+  .then((res) => {
+    return res.json();
+  })
+  .then((data) => {
+    let numberOfBlogs= document.getElementById("totalBlogs");
+    numberOfBlogs.textContent = data.length;
+    console.log("DATA LENGTH IS",data.length);
+  });
         </script>
   </body>
 </html>
